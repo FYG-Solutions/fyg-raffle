@@ -1,33 +1,28 @@
 <template>
-  <div
-    class="py-8 px-8 max-w-sm mx-auto bg-white rounded-xl shadow-md space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6"
-  >
-    <img
-      class="block mx-auto h-24 rounded-full sm:mx-0 sm:flex-shrink-0"
-      src="/img/erin-lindford.jpg"
-      alt="Woman's Face"
-    />
-    <div class="text-center space-y-2 sm:text-left">
-      <div class="space-y-0.5">
-        <p class="text-lg text-black font-semibold">
-          Erin Lindford
-        </p>
-        <p class="text-gray-500 font-medium">
-          Product Engineer
-        </p>
+  <div>
+    <header class="bg-white shadow">
+      <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold leading-tight text-gray-900">
+          ¡Bienvenidos!
+        </h1>
       </div>
-      <button
-        class="px-4 py-1 text-sm text-purple-600 font-semibold rounded-full border border-purple-200 hover:text-white hover:bg-purple-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-purple-600 focus:ring-offset-2"
-      >
-        Message
-      </button>
-    </div>
+    </header>
+    <main>
+      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+        <!-- Replace with your content -->
+        <div class="px-4 py-6 sm:px-0">
+          <div
+            class="border-4 border-dashed border-gray-200 rounded-lg h-96"
+          ></div>
+        </div>
+        <!-- /End replace -->
+      </div>
+    </main>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Home",
-  components: {}
+  name: "Home"
 };
 </script>
