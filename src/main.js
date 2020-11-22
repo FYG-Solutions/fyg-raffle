@@ -3,6 +3,9 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 
+// Tailwinwd
+import "tailwindcss/tailwind.css";
+
 Vue.config.productionTip = false;
 
 new Vue({
