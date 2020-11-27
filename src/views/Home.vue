@@ -1,5 +1,6 @@
 <template>
   <main>
+    <!-- HEADER Details -->
     <div class="mt-5 details-container flex w-full">
       <div class="mt-3 flex-auto">
         <span class="font-semibold text-3xl text-blue-700">
@@ -11,117 +12,118 @@
       </div>
       <div class="mt-3 flex-auto">
         <span class="font-semibold text-3xl text-green-600">
-          {{ bonosConPremioPorRepartir }}
+          {{ regalosConPremioRestantes }}
         </span>
         <p>
-          Bonos con premio restantes:
+          Regalos con premio restantes:
         </p>
       </div>
       <div class="mt-3 flex-auto">
         <span class="font-semibold text-3xl text-red-600">
-          {{ bonosVaciosPorRepartir }}
+          {{ regalosSinPremiosRestantes }}
         </span>
         <p>
-          Bonos vacíos restantes:
+          Regalos sin premios restantes:
         </p>
       </div>
     </div>
+    <!-- /HEADER Details -->
+
     <div
       class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-96 my-10 mx-5"
     >
       <div class="col-span-1 mt-5">
-        <p class="text-gray-800 mb-3">
-          Siguiente colaborador
-        </p>
-        <ul class="text-3xl text-blue-700">
-          <li
-            v-for="colaborador in colaboradoresRestantes.slice(0, 1)"
-            :key="colaborador.id"
+        <div class="width-full">
+          <button
+            type="button"
+            class="rounded border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+            @click="obtenerSiguienteParticipanteClick"
           >
-            {{ colaborador.codigo }} - {{ colaborador.nombre }}
-          </li>
-        </ul>
+            Elegir siguiente participante
+          </button>
+        </div>
+        <p class="text-gray-800 mt-5 mb-3">
+          Participante actual:
+        </p>
+        <p class="text-3xl text-blue-700">
+          <span v-if="colaboradorActivo">
+            {{ colaboradorActivo.codigo }} - {{ colaboradorActivo.nombre }}
+          </span>
+          <span v-else>
+            {{ animacionSiguienteColaborador.nombre }}
+          </span>
+        </p>
       </div>
       <div class="col-span-2 mt-5">
         <div class="width-full">
           <button
-            v-if="siguienteColaborador"
+            v-if="colaboradorActivo"
             type="button"
             class="rounded border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
             @click="sortearPremio"
           >
-            Sortear bono para {{ siguienteColaborador.nombre }}
+            Sortear bono para {{ colaboradorActivo.nombre }}
           </button>
         </div>
 
-        <!-- Lista de bonos pendientes -->
-        <div v-if="listBonosVisible" class="bonos-pendientes-container w-full">
+        <!-- Lista de premios pendientes -->
+        <div
+          v-if="listPremiosVisible"
+          class="premios-pendientes-container w-full"
+        >
           <p class="mt-5">
-            Bonos pendientes:
+            Premios pendientes:
           </p>
-
           <div class="width-full mt-3">
             <div
-              v-for="(bono, index) in listaDeBonos"
+              v-for="(premio, index) in listaDePremios"
               :key="index"
               class="mr-5 mt-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
               :class="{
-                'bg-green-200 text-green-700':
-                  bono.premio === premio.CON_PREMIO,
-                'bg-red-200 text-red-700':
-                  bono.premio === premio.SIN_PREMIO,
-                hidden: bono.oculto
+                'bg-green-200 text-green-700': premio.monto !== '$0,00',
+                'bg-red-200 text-red-700': premio.monto === '$0,00',
+                hidden: premio.oculto
               }"
             >
               <feather
-                :type="
-                  bono.premio === premio.CON_PREMIO
-                    ? 'gift'
-                    : 'cloud-rain'
-                "
+                :type="premio.monto !== '$0,00' ? 'gift' : 'cloud-rain'"
               ></feather>
-              <span class="ml-1">Premio</span>
+              <span class="ml-1">{{ premio.monto }}</span>
             </div>
           </div>
         </div>
-        <!-- /Lista de bonos pendientes -->
+        <!-- /Lista de premios pendientes -->
 
-        <!-- Lista de bonos para sortear -->
+        <!-- Lista de premios para sortear -->
         <div
-          v-if="bonosParaSorteoVisible"
-          class="bonos-pendientes-container w-full"
+          v-if="premiosParaSorteoVisible"
+          class="premios-pendientes-container w-full"
         >
           <p class="mt-5 text-xl">
             Sorteando premios...
           </p>
 
           <div class="width-full mt-3">
-            <template v-for="(bono, index) in bonosParaSorteo">
+            <template v-for="(premio, index) in premiosParaSorteo">
               <transition name="bounce" :key="index">
                 <div
-                  v-if="!bono.oculto"
+                  v-if="!premio.oculto"
                   class="mr-5 mt-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
                   :class="{
-                    'bg-green-200 text-green-700':
-                      bono.premio === premio.CON_PREMIO,
-                    'bg-red-200 text-red-700':
-                      bono.premio === premio.SIN_PREMIO
+                    'bg-green-200 text-green-700': premio.monto !== '$0,00',
+                    'bg-red-200 text-red-700': premio.monto === '$0,00'
                   }"
                 >
                   <feather
-                    :type="
-                      bono.premio === premio.CON_PREMIO
-                        ? 'gift'
-                        : 'cloud-rain'
-                    "
+                    :type="premio.monto !== '$0,00' ? 'gift' : 'cloud-rain'"
                   ></feather>
-                  <span class="ml-1">Premio</span>
+                  <span class="ml-1">{{ premio.monto }}</span>
                 </div>
               </transition>
             </template>
           </div>
         </div>
-        <!-- /Lista de bonos para sortear -->
+        <!-- /Lista de premios para sortear -->
       </div>
     </div>
   </main>
@@ -135,18 +137,21 @@ export default {
   data() {
     return {
       colaboradores: [],
-      bonosParaSorteo: [],
+      premios: [],
+      colaboradorActivo: null,
+      animacionSiguienteColaborador: { nombre: "" },
+      premiosParaSorteo: [],
       BONOS_PREMIADOS: 5,
       BONOS_VACIOS: 2,
       sorteoActivo: false,
-      premio: {
+      estatus: {
         CON_PREMIO: "conPremio",
         SIN_PREMIO: "sinPremio",
         PENDIENTE: "pendiente"
       },
-      listBonosVisible: true,
-      bonosParaSorteoVisible: false,
-      duracionSorteo: 10000
+      listPremiosVisible: true,
+      premiosParaSorteoVisible: false,
+      duracionSorteo: 7000
     };
   },
   computed: {
@@ -157,74 +162,37 @@ export default {
      */
     colaboradoresRestantes() {
       return this.colaboradores.filter(
-        item => item.premio === this.premio.PENDIENTE
+        item => item.premio === this.estatus.PENDIENTE
       );
-    },
-    /**
-     * Retorna el siguiente colaborador para participar en la rifa.
-     *
-     * @returns {Array<Object>}
-     */
-    siguienteColaborador() {
-      return this.colaboradoresRestantes[0];
     },
     /**
      * Calcula los bonos que se darán, descontando los bonos vacíos
      *
      * @returns {number}
      */
-    bonosConPremioPorRepartir() {
-      const totalBonos = this.colaboradores.length;
-      return totalBonos - this.bonosConPremioRepartidos - this.BONOS_VACIOS;
-    },
-    /**
-     * Calcula el total de bonos premiados repartidos
-     *
-     * @returns {number}
-     */
-    bonosConPremioRepartidos() {
-      return this.colaboradores.filter(
-        item => item.premio === this.premio.CON_PREMIO
-      ).length;
-    },
-    /**
-     * Calcula el total de bonos vacíos repartidos
-     *
-     * @returns {number}
-     */
-    bonosVaciosRepartidos() {
-      return this.colaboradores.filter(
-        item => item.premio === this.premio.SIN_PREMIO
-      ).length;
+    regalosConPremioRestantes() {
+      return this.premios.filter(item => item.monto !== "$0,00").length;
     },
     /**
      * Calcula los bonos vacíos que quedan por repartir.
      *
      * @returns {number}
      */
-    bonosVaciosPorRepartir() {
-      return this.BONOS_VACIOS - this.bonosVaciosRepartidos;
+    regalosSinPremiosRestantes() {
+      return this.premios.filter(item => item.monto === "$0,00").length;
     },
     /**
      * Función que retorna un arreglo con los bonos premiados y vacíos por otorgar.
      *
      * @returns {Array<Object>}
      */
-    listaDeBonos() {
+    listaDePremios() {
       let bonosPendientes = [];
 
-      // Agrega primero, los bonos con premio pendientes
-      for (let i = 0; i < this.bonosConPremioPorRepartir; i++) {
+      for (let i = 0; i < this.premios.length; i++) {
         bonosPendientes.push({
-          premio: this.premio.CON_PREMIO,
-          oculto: false
-        });
-      }
-
-      // Agrega los bonos sin premio pendientes
-      for (let i = 0; i < this.bonosVaciosPorRepartir; i++) {
-        bonosPendientes.push({
-          premio: this.premio.SIN_PREMIO,
+          premio: this.estatus.CON_PREMIO,
+          monto: this.premios[i].monto,
           oculto: false
         });
       }
@@ -234,23 +202,38 @@ export default {
   },
   methods: {
     /**
+     * Método que permie obtener al siguiente participante.
+     */
+    async obtenerSiguienteParticipanteClick() {
+      this.colaboradorActivo = null;
+      let duracionAnimacion = 100;
+      let randomValue = Math.random() * (50 - 25) + 25;
+
+      for (let i = 1; i < randomValue; i++) {
+        await new Promise(r => setTimeout(r, duracionAnimacion));
+        this.animacionSiguienteColaborador = this.colaboradores[i];
+      }
+      this.colaboradorActivo = this.animacionSiguienteColaborador;
+      this.animacionSiguienteColaborador = { nombre: "" };
+    },
+    /**
      * Función que inicia la interacción para el sorteo de bono para el siguiente colaborador.
      */
     async sortearPremio() {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
-      this.bonosParaSorteo = this.listaDeBonos;
+      this.premiosParaSorteo = this.listaDePremios;
 
-      // Oculta la lista de bonosPendientes, para mosstrar la lista bonosParaSorteo
-      this.listBonosVisible = false;
+      // Oculta la lista de bonosPendientes, para mosstrar la lista premiosParaSorteo
+      this.listPremiosVisible = false;
 
-      // Muestra la lista bonosParaSorteo
-      this.bonosParaSorteoVisible = true;
-      let duracion = this.duracionSorteo / this.bonosParaSorteo.length;
+      // Muestra la lista premiosParaSorteo
+      this.premiosParaSorteoVisible = true;
+      let duracion = this.duracionSorteo / this.premiosParaSorteo.length;
 
       // Crea una array de enteros para las posiciones de los bonos
       let arrayPosiciones = [];
 
-      for (let i = 0; i < this.bonosParaSorteo.length; i++) {
+      for (let i = 0; i < this.premiosParaSorteo.length; i++) {
         arrayPosiciones.push(i);
       }
 
@@ -258,9 +241,9 @@ export default {
       arrayPosiciones = this.shuffle(arrayPosiciones);
 
       // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
-      for (let i = 1; i < this.bonosParaSorteo.length; i++) {
+      for (let i = 1; i < this.premiosParaSorteo.length; i++) {
         await new Promise(r => setTimeout(r, duracion));
-        this.bonosParaSorteo[arrayPosiciones[i]].oculto = true;
+        this.premiosParaSorteo[arrayPosiciones[i]].oculto = true;
       }
     },
     /**
@@ -291,7 +274,8 @@ export default {
   },
 
   firestore: {
-    colaboradores: db.collection("colaboradores").orderBy("turno", "asc")
+    colaboradores: db.collection("colaboradores").orderBy("turno", "asc"),
+    premios: db.collection("premios").orderBy("id")
   }
 };
 </script>
