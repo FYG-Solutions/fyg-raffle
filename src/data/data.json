@@ -1,0 +1,332 @@
+{
+  "premios": [
+    { "id": 1, "estatus": "pendiente", "monto": "$1.000,00" },
+    { "id": 2, "estatus": "pendiente", "monto": "$1.000,00" },
+    { "id": 3, "estatus": "pendiente", "monto": "$1.000,00" },
+    { "id": 4, "estatus": "pendiente", "monto": "$2.500,00" },
+    { "id": 5, "estatus": "pendiente", "monto": "$2.500,00" },
+    { "id": 6, "estatus": "pendiente", "monto": "$2.500,00" },
+    { "id": 7, "estatus": "pendiente", "monto": "$2.500,00" },
+    { "id": 8, "estatus": "pendiente", "monto": "$3.000,00" },
+    { "id": 9, "estatus": "pendiente", "monto": "$3.000,00" },
+    { "id": 10, "estatus": "pendiente", "monto": "$3.000,00" },
+    { "id": 11, "estatus": "pendiente", "monto": "$3.000,00" },
+    { "id": 12, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 13, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 14, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 15, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 16, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 17, "estatus": "pendiente", "monto": "$5.000,00" },
+    { "id": 18, "estatus": "pendiente", "monto": "$7.500,00" },
+    { "id": 19, "estatus": "pendiente", "monto": "$7.500,00" },
+    { "id": 20, "estatus": "pendiente", "monto": "$10.000,00" }
+  ],
+  "colaboradores": [
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "4534196",
+      "nombre": "Patricia Sosa Sanchez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8943625",
+      "nombre": "Cesar Alejandro Miranda Bravo"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2740905",
+      "nombre": "Jehu Alfredo Soto Chimal"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7215501",
+      "nombre": "Ramses Martinez Ortiz"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2855071",
+      "nombre": "Mario Alberto Vilchis Nava"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2069974",
+      "nombre": "Carlos Ignacio Juarez Hernandez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7823377",
+      "nombre": "Alexis Almaraz Robles"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "4272591",
+      "nombre": "Marco Antonio Lortia Prado"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9341913",
+      "nombre": "Cesar Alejandro Morales Saucedo"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9605812",
+      "nombre": "Jesus Carbajal Montes"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7692807",
+      "nombre": "Juan Alberto Bautista Grande"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2975141",
+      "nombre": "Porfirio Martìnez Martìnez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8128838",
+      "nombre": "Chistian Salazar Galarza"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8160408",
+      "nombre": "Gonzalo Abiut Arteaga Barajas"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9382921",
+      "nombre": "Ricardo Peña Vargas"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "1945899",
+      "nombre": "Gerardo Pérez Soria"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7179145",
+      "nombre": "Jose Alberto Villaseñor Suarez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "3478092",
+      "nombre": "Ricardo Alan Casimiro Lopez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "6162510",
+      "nombre": "Alejandro Galicia García"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8052638",
+      "nombre": "Manuel Antonio Ramirez Gomez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8085906",
+      "nombre": "Brenda Cecilia Hernandez Perez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9537969",
+      "nombre": "Eric Yael Gamboa Solis"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "3474277",
+      "nombre": "Angel Martin Ortiz Ruiz"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9107275",
+      "nombre": "Lucero Padilla Leon"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2422096",
+      "nombre": "Alejandro Joao Gonzalez Gonzalez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7319744",
+      "nombre": "Jorge Esquivel Garcia"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8031513",
+      "nombre": "Alice Mayle Rojas Barrios"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "6202912",
+      "nombre": "Miguel Angel Castelán Mata"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8140897",
+      "nombre": "Eva Maria Alcazar Perez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "5318188",
+      "nombre": "Maribel Barranco Rodriguez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7068495",
+      "nombre": "Mariana Jimenez Jimenez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "4709332",
+      "nombre": "Jonathan Martinez Hernandez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9760851",
+      "nombre": "Rodrigo Chavez Mercado"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "6647601",
+      "nombre": "Omar Ruiz Gutierrez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "3913331",
+      "nombre": "Luis Fernando Cruz Rivera"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2596906",
+      "nombre": "Adrián Moisés Camacho Torrea"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "5758964",
+      "nombre": "Naomi Paola Jardine Torres"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "7367638",
+      "nombre": "Adolfo Daniel Roman Carbajal"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8506094",
+      "nombre": "Elisabet Adyani Vasquez Martinez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "3939518",
+      "nombre": "Laura Karina Sánchez  Ramirez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9064635",
+      "nombre": "Flavio Rico Mendez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "9483171",
+      "nombre": "Javier Pérez Pérez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "2220413",
+      "nombre": "Juan Carlos Vazquez Orozco"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "5159053",
+      "nombre": "Christian Oswaldo Lopez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "6798229",
+      "nombre": "FRANCISCO PENEDO GONZALEZ"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "5923395",
+      "nombre": "Mauricio Olascoaga Garcia"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8363332",
+      "nombre": "Mauricio Ivan Mejia Ramirez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "3817131",
+      "nombre": "Andrea Aguirre Rendon"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "5430345",
+      "nombre": "Enrique Arturo Rodriguez Nava"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "1689168",
+      "nombre": "Isaias Cristobal Perez Gonzalez"
+    },
+    {
+      "turno": -1,
+      "premio": "pendiente",
+      "codigo": "8026044",
+      "nombre": "Monserrat Mondragon Mancera"
+    }
+  ]
+}

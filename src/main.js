@@ -2,9 +2,16 @@ import Vue from "vue";
 import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
+import VueFeather from "vue-feather";
+import { firestorePlugin } from "vuefire";
 
-// Tailwinwd
 import "tailwindcss/tailwind.css";
+
+// Firebase
+Vue.use(firestorePlugin);
+
+// Feather
+Vue.use(VueFeather);
 
 Vue.config.productionTip = false;
 
