@@ -19,7 +19,7 @@ export default {
   },
   components: { Navbar },
   methods: {
-    async play() {
+    async reload() {
       this.routerActive = false;
       await new Promise(r => setTimeout(r, 500));
       this.routerActive = true;

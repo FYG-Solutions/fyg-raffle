@@ -153,7 +153,8 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 3000
+      duracionSorteo: 3000,
+      duracionSiguienteColaborador: 20
     };
   },
   computed: {
@@ -216,7 +217,7 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      let duracionAnimacion = 10;
+      let duracionAnimacion = this.duracionSiguienteColaborador;
       let randomValue = Math.random() * (50 - 25) + 25;
 
       for (let i = 1; i < randomValue; i++) {
@@ -289,7 +290,7 @@ export default {
       let resultado = this.premiosParaSorteo.filter(
         item => item.visible === true
       )[0];
-      console.log(resultado);
+
       if (resultado.monto !== "$0,00") {
         this.$swal({
           title: "¡Felicidades!",
