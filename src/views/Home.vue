@@ -30,13 +30,14 @@
     <!-- /HEADER Details -->
 
     <div
-      class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-96 my-10 mx-5"
+      class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-auto my-10 mx-5"
     >
       <div class="col-span-1 mt-5">
         <div class="width-full">
           <button
-            type="button"
+            :disabled="btnSiguienteParticipanteDisabled"
             class="rounded border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline"
+            :class="{ 'cursor-not-allowed': btnSiguienteParticipanteDisabled }"
             @click="obtenerSiguienteParticipanteClick"
           >
             Elegir siguiente participante
@@ -47,7 +48,7 @@
         </p>
         <p class="text-3xl text-blue-700">
           <span v-if="colaboradorActivo">
-            {{ colaboradorActivo.codigo }} - {{ colaboradorActivo.nombre }}
+            {{ colaboradorActivo.nombre }}
           </span>
           <span v-else>
             {{ animacionSiguienteColaborador.nombre }}
@@ -58,11 +59,12 @@
         <div class="width-full">
           <button
             v-if="colaboradorActivo"
-            type="button"
+            :disabled="btnSortearActivoDisabled"
             class="rounded border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
+            :class="{ 'cursor-not-allowed': btnSortearActivoDisabled }"
             @click="sortearPremio"
           >
-            Sortear bono para {{ colaboradorActivo.nombre }}
+            Sortear premio para {{ colaboradorActivo.nombre }}
           </button>
         </div>
 
@@ -76,19 +78,17 @@
           </p>
           <div class="width-full mt-3">
             <div
-              v-for="(premio, index) in listaDePremios"
+              v-for="(premio, index) in listaDePremiosPendientes"
               :key="index"
-              class="mr-5 mt-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
               :class="{
                 'bg-green-200 text-green-700': premio.monto !== '$0,00',
-                'bg-red-200 text-red-700': premio.monto === '$0,00',
-                hidden: premio.oculto
+                'bg-red-200 text-red-700': premio.monto === '$0,00'
               }"
             >
               <feather
-                :type="premio.monto !== '$0,00' ? 'gift' : 'cloud-rain'"
+                :type="premio.monto !== '$0,00' ? 'gift' : 'frown'"
               ></feather>
-              <span class="ml-1">{{ premio.monto }}</span>
             </div>
           </div>
         </div>
@@ -107,17 +107,16 @@
             <template v-for="(premio, index) in premiosParaSorteo">
               <transition name="bounce" :key="index">
                 <div
-                  v-if="!premio.oculto"
-                  class="mr-5 mt-4 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+                  v-if="premio.visible"
+                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
                   :class="{
                     'bg-green-200 text-green-700': premio.monto !== '$0,00',
                     'bg-red-200 text-red-700': premio.monto === '$0,00'
                   }"
                 >
                   <feather
-                    :type="premio.monto !== '$0,00' ? 'gift' : 'cloud-rain'"
+                    :type="premio.monto !== '$0,00' ? 'gift' : 'frown'"
                   ></feather>
-                  <span class="ml-1">{{ premio.monto }}</span>
                 </div>
               </transition>
             </template>
@@ -137,6 +136,8 @@ export default {
   data() {
     return {
       colaboradores: [],
+      btnSiguienteParticipanteDisabled: false,
+      btnSortearActivoDisabled: false,
       premios: [],
       colaboradorActivo: null,
       animacionSiguienteColaborador: { nombre: "" },
@@ -147,11 +148,12 @@ export default {
       estatus: {
         CON_PREMIO: "conPremio",
         SIN_PREMIO: "sinPremio",
-        PENDIENTE: "pendiente"
+        PENDIENTE: "pendiente",
+        ENTREGADO: "entregado"
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 7000
+      duracionSorteo: 3000
     };
   },
   computed: {
@@ -171,7 +173,10 @@ export default {
      * @returns {number}
      */
     regalosConPremioRestantes() {
-      return this.premios.filter(item => item.monto !== "$0,00").length;
+      return this.premios.filter(
+        item =>
+          item.monto !== "$0,00" && item.estatus === this.estatus.PENDIENTE
+      ).length;
     },
     /**
      * Calcula los bonos vacíos que quedan por repartir.
@@ -179,25 +184,23 @@ export default {
      * @returns {number}
      */
     regalosSinPremiosRestantes() {
-      return this.premios.filter(item => item.monto === "$0,00").length;
+      return this.premios.filter(
+        item =>
+          item.monto === "$0,00" && item.estatus === this.estatus.PENDIENTE
+      ).length;
     },
     /**
      * Función que retorna un arreglo con los bonos premiados y vacíos por otorgar.
      *
      * @returns {Array<Object>}
      */
-    listaDePremios() {
-      let bonosPendientes = [];
+    listaDePremiosPendientes() {
+      // Filtra los premios pendientes
+      let premiosPendientes = this.premios.filter(
+        item => item.estatus === this.estatus.PENDIENTE
+      );
 
-      for (let i = 0; i < this.premios.length; i++) {
-        bonosPendientes.push({
-          premio: this.estatus.CON_PREMIO,
-          monto: this.premios[i].monto,
-          oculto: false
-        });
-      }
-
-      return bonosPendientes.sort(() => Math.random() - 0.5);
+      return premiosPendientes.sort(() => Math.random() - 0.5);
     }
   },
   methods: {
@@ -206,7 +209,7 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      let duracionAnimacion = 100;
+      let duracionAnimacion = 10;
       let randomValue = Math.random() * (50 - 25) + 25;
 
       for (let i = 1; i < randomValue; i++) {
@@ -215,22 +218,24 @@ export default {
       }
       this.colaboradorActivo = this.animacionSiguienteColaborador;
       this.animacionSiguienteColaborador = { nombre: "" };
+      this.btnSiguienteParticipanteDisabled = true;
     },
     /**
      * Función que inicia la interacción para el sorteo de bono para el siguiente colaborador.
      */
     async sortearPremio() {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
-      this.premiosParaSorteo = this.listaDePremios;
-
-      // Oculta la lista de bonosPendientes, para mosstrar la lista premiosParaSorteo
+      this.premiosParaSorteo = this.listaDePremiosPendientes.map(item => {
+        item.visible = true;
+        return item;
+      });
+      // Oculta la lista de bonosPendientes, para mostrar la lista premiosParaSorteo
       this.listPremiosVisible = false;
 
       // Muestra la lista premiosParaSorteo
       this.premiosParaSorteoVisible = true;
-      let duracion = this.duracionSorteo / this.premiosParaSorteo.length;
+      let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
 
-      // Crea una array de enteros para las posiciones de los bonos
       let arrayPosiciones = [];
 
       for (let i = 0; i < this.premiosParaSorteo.length; i++) {
@@ -243,8 +248,52 @@ export default {
       // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
       for (let i = 1; i < this.premiosParaSorteo.length; i++) {
         await new Promise(r => setTimeout(r, duracion));
-        this.premiosParaSorteo[arrayPosiciones[i]].oculto = true;
+        this.premiosParaSorteo[arrayPosiciones[i]].visible = false;
       }
+
+      let resultadoSorteo = this.getResultadoSorteo();
+      this.guardarResultado(resultadoSorteo);
+      // this.btnSortearActivoDisabled = true;
+    },
+    /**
+     * Función para almacenar en Firestore el resultado del sorteo.
+     */
+    guardarResultado(resultadoSorteo) {
+      let premio = {
+        monto: resultadoSorteo.monto,
+        estatus: this.estatus.ENTREGADO
+      };
+      let colaborador = { ...this.colaboradorActivo };
+      colaborador.premio = resultadoSorteo.monto;
+      db.collection("premios")
+        .doc(resultadoSorteo.id)
+        .set(premio)
+        .then(() => {});
+      db.collection("colaboradores")
+        .doc(this.colaboradorActivo.id)
+        .set(colaborador)
+        .then(() => {});
+    },
+    /**
+     * Permite obtener el resultado del sorteo.
+     */
+    getResultadoSorteo() {
+      let resultado = this.premiosParaSorteo[0];
+      console.log(resultado);
+      if (resultado.estatus === this.estatus.CON_PREMIO) {
+        this.$swal({
+          title: "¡Felicidades!",
+          text: `¡ganaste ${resultado.monto}!`,
+          icon: "success"
+        });
+      } else {
+        this.$swal({
+          title: "Ops...",
+          text: `Más suerte la próxima!`,
+          icon: "error"
+        });
+      }
+      return resultado;
     },
     /**
      * Método que recibe un array de elementos y los retorna en orden aleatorio.
@@ -274,29 +323,8 @@ export default {
   },
 
   firestore: {
-    colaboradores: db.collection("colaboradores").orderBy("turno", "asc"),
-    premios: db.collection("premios").orderBy("id")
+    colaboradores: db.collection("colaboradores"),
+    premios: db.collection("premios")
   }
 };
 </script>
-
-<style lang="scss" scoped>
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-  50% {
-    transform: scale(1.5);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-</style>

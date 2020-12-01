@@ -1,7 +1,9 @@
 <template>
   <div class="w-full">
     <Navbar />
-    <router-view />
+    <transition name="fade">
+      <router-view v-if="routerActive" />
+    </transition>
   </div>
 </template>
 
@@ -10,6 +12,18 @@ import Navbar from "@/components/Navbar.vue";
 
 export default {
   name: "Main",
-  components: { Navbar }
+  data() {
+    return {
+      routerActive: true
+    };
+  },
+  components: { Navbar },
+  methods: {
+    async play() {
+      this.routerActive = false;
+      await new Promise(r => setTimeout(r, 500));
+      this.routerActive = true;
+    }
+  }
 };
 </script>
