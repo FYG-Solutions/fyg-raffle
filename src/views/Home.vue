@@ -196,10 +196,17 @@ export default {
      */
     listaDePremiosPendientes() {
       // Filtra los premios pendientes
-      let premiosPendientes = this.premios.filter(
-        item => item.estatus === this.estatus.PENDIENTE
-      );
+      let premiosPendientes = [];
 
+      for (let i = 0; i < this.premios.length; i++) {
+        if (this.premios[i].estatus === this.estatus.PENDIENTE) {
+          premiosPendientes.push({
+            id: this.premios[i].id,
+            premio: this.estatus.PENDIENTE,
+            monto: this.premios[i].monto
+          });
+        }
+      }
       return premiosPendientes.sort(() => Math.random() - 0.5);
     }
   },
@@ -225,7 +232,7 @@ export default {
      */
     async sortearPremio() {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
-      this.premiosParaSorteo = this.listaDePremiosPendientes.map(item => {
+      this.premiosParaSorteo = await this.listaDePremiosPendientes.map(item => {
         item.visible = true;
         return item;
       });
@@ -250,10 +257,11 @@ export default {
         await new Promise(r => setTimeout(r, duracion));
         this.premiosParaSorteo[arrayPosiciones[i]].visible = false;
       }
+      await new Promise(r => setTimeout(r, 1000));
 
       let resultadoSorteo = this.getResultadoSorteo();
       this.guardarResultado(resultadoSorteo);
-      // this.btnSortearActivoDisabled = true;
+      this.btnSortearActivoDisabled = true;
     },
     /**
      * Función para almacenar en Firestore el resultado del sorteo.
@@ -278,9 +286,11 @@ export default {
      * Permite obtener el resultado del sorteo.
      */
     getResultadoSorteo() {
-      let resultado = this.premiosParaSorteo[0];
+      let resultado = this.premiosParaSorteo.filter(
+        item => item.visible === true
+      )[0];
       console.log(resultado);
-      if (resultado.estatus === this.estatus.CON_PREMIO) {
+      if (resultado.monto !== "$0,00") {
         this.$swal({
           title: "¡Felicidades!",
           text: `¡ganaste ${resultado.monto}!`,

@@ -57,7 +57,6 @@ export default {
       // Genera los premios de $0,00
       while (premios.length < colaboradores.length) {
         let premioVacio = {
-          id: premios.length + 1,
           estatus: "pendiente",
           monto: "$0,00"
         };
@@ -88,13 +87,9 @@ export default {
       });
     },
     cargarColaborador(colaborador) {
-      const createdAt = new Date();
-      colaborador.createdAt = createdAt;
       db.collection("colaboradores").add(colaborador);
     },
     cargarPremio(premio) {
-      const createdAt = new Date();
-      premio.createdAt = createdAt;
       db.collection("premios").add(premio);
     },
     limpiarDatos() {
