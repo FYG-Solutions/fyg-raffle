@@ -220,10 +220,11 @@ export default {
       while (premiosPerdedores.length > 0) {
         let premioPerdedor = premiosPerdedores.pop();
 
-        let min = 2;
+        let min = 1;
         let max = premiosPendientes.length;
         let rand = parseInt(Math.random() * (max - min) + min);
-        premiosPendientes.splice(rand, 0, premioPerdedor);
+        console.log(premiosPendientes.length, rand);
+        premiosPendientes.splice(rand + 1, 0, premioPerdedor);
       }
 
       // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
