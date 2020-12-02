@@ -80,9 +80,13 @@
             <div
               v-for="(premio, index) in listaDePremiosPendientes"
               :key="index"
-              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-green-200 text-green-700"
+              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+              :class="{
+                'bg-green-200 text-green-700': premio.monto !== 0,
+                'bg-red-200 text-red-700': premio.monto === 0
+              }"
             >
-              <feather type="gift"></feather>
+              <feather :type="premio.monto !== 0 ? 'gift' : 'frown'"></feather>
               {{ premio.monto }}
             </div>
           </div>
@@ -103,9 +107,15 @@
               <transition name="bounce" :key="index">
                 <div
                   v-if="premio.visible"
-                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-green-200 text-green-700"
+                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+                  :class="{
+                    'bg-green-200 text-green-700': premio.monto !== 0,
+                    'bg-red-200 text-red-700': premio.monto === 0
+                  }"
                 >
-                  <feather type="gift"></feather>
+                  <feather
+                    :type="premio.monto !== 0 ? 'gift' : 'frown'"
+                  ></feather>
                   {{ premio.monto }}
                 </div>
               </transition>
@@ -143,13 +153,22 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 3000,
+      duracionSorteo: 500,
       duracionSiguienteColaborador: 20,
       estaSorteando: true
     };
   },
   created() {
     this.loadData();
+  },
+  watch: {
+    colaboradoresRestantes(val) {
+      if (val.length === 0) {
+        this.btnSiguienteParticipanteDisabled = true;
+      } else {
+        this.btnSiguienteParticipanteDisabled = false;
+      }
+    }
   },
   computed: {
     /**
@@ -223,7 +242,6 @@ export default {
         let min = 1;
         let max = premiosPendientes.length;
         let rand = parseInt(Math.random() * (max - min) + min);
-        console.log(premiosPendientes.length, rand);
         premiosPendientes.splice(rand + 1, 0, premioPerdedor);
       }
 
@@ -262,15 +280,16 @@ export default {
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
       let duracionAnimacion = this.duracionSiguienteColaborador;
-      let randomValue =
-        Math.random() *
-          (this.colaboradoresRestantes.length -
-            parseInt(this.colaboradoresRestantes.length / 2)) +
-        parseInt(this.colaboradoresRestantes.length / 2);
+      let colAux = [];
+      Object.assign(colAux, this.colaboradoresRestantes);
 
-      for (let i = 1; i < randomValue; i++) {
+      for (let i = colAux.length - 1; i >= 0; i--) {
         await new Promise(r => setTimeout(r, duracionAnimacion));
-        this.animacionSiguienteColaborador = this.colaboradoresRestantes[i];
+
+        this.animacionSiguienteColaborador = colAux.splice(
+          Math.floor(Math.random() * colAux.length),
+          1
+        )[0];
       }
       this.colaboradorActivo = this.animacionSiguienteColaborador;
       this.animacionSiguienteColaborador = { nombre: "" };

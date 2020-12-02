@@ -17,7 +17,7 @@
                   :to="{ name: 'Home' }"
                   class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700"
                 >
-                  Inicio
+                  Sorteo
                 </router-link>
               </div>
             </div>
@@ -38,7 +38,7 @@
                   class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 flex items-center"
                   @click="reload"
                 >
-                  <span>Reiniciar</span>
+                  <span>Siguiente premio</span>
                   <feather type="play"></feather>
                 </a>
               </div>
