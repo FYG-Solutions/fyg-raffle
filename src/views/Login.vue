@@ -13,13 +13,14 @@
           Bienvenido
         </h2>
       </div>
-      <form class="mt-8 space-y-6" action="#" method="POST">
+      <form class="mt-8 space-y-6" @submit.prevent="login">
         <input type="hidden" name="remember" value="true" />
         <div class="rounded-md shadow-sm -space-y-px">
           <div>
             <label for="email-address" class="sr-only">Correo</label>
             <input
               id="email-address"
+              v-model="email"
               name="email"
               type="email"
               required
@@ -31,6 +32,7 @@
             <label for="password" class="sr-only">Contraseña</label>
             <input
               id="password"
+              v-model="password"
               name="password"
               type="password"
               required
@@ -64,13 +66,36 @@
             Acceder
           </button>
         </div>
+        {{ $data }}
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
-  name: "Login"
+  name: "Login",
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    login() {
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(user => {
+          console.log(user);
+          this.$router.replace("home");
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    }
+  }
 };
 </script>

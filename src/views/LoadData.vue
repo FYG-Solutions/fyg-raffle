@@ -13,7 +13,7 @@
         <button
           type="submit"
           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          @click="loadData"
+          @click="loadDataToFirestore"
         >
           Cargar datos
         </button>
@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import { db } from "@/firebase/firebaseConnection";
 import jsonData from "../data/data.json";
+import firebase from "firebase";
 
 export default {
   name: "Login",
@@ -41,11 +41,38 @@ export default {
       premios: []
     };
   },
+  created() {
+    this.loadData();
+  },
   methods: {
+    async loadData() {
+      let premiosRef = await firebase.firestore().collection("premios");
+      let colaboradoresRef = await firebase
+        .firestore()
+        .collection("colaboradores");
+
+      premiosRef.onSnapshot(snap => {
+        this.premios = [];
+        snap.forEach(doc => {
+          let todo = doc.data();
+          todo.id = doc.id;
+          this.premios.push(todo);
+        });
+      });
+
+      colaboradoresRef.onSnapshot(snap => {
+        this.premios = [];
+        snap.forEach(doc => {
+          let colaborador = doc.data();
+          colaborador.id = doc.id;
+          this.colaboradores.push(colaborador);
+        });
+      });
+    },
     /**
      * Permite precargar la BDD con los valores iniciales.
      */
-    loadData() {
+    loadDataToFirestore() {
       // Valida si existen valores en la BDD
       if (this.colaboradores.length > 1) {
         alert("Datos ya han sido cargados");
@@ -75,43 +102,41 @@ export default {
       this.limpiarDatos();
     },
     eliminarDatos: function() {
-      this.colaboradores.forEach(item => {
-        db.collection("colaboradores")
-          .doc(item.id)
-          .delete();
-      });
-      this.premios.forEach(item => {
-        db.collection("premios")
-          .doc(item.id)
-          .delete();
-      });
+      // this.colaboradores.forEach(item => {
+      //   db.collection("colaboradores")
+      //     .doc(item.id)
+      //     .delete();
+      // });
+      // this.premios.forEach(item => {
+      //   db.collection("premios")
+      //     .doc(item.id)
+      //     .delete();
+      // });
     },
     cargarColaborador(colaborador) {
-      db.collection("colaboradores").add(colaborador);
+      // db.collection("colaboradores").add(colaborador);
+      console.log(colaborador);
     },
     cargarPremio(premio) {
-      db.collection("premios").add(premio);
+      // db.collection("premios").add(premio);
+      console.log(premio);
     },
     limpiarDatos() {
       this.colaboradores.forEach(item => {
         if (!item.codigo) {
-          db.collection("colaboradores")
-            .doc(item.id)
-            .delete();
+          // db.collection("colaboradores")
+          //   .doc(item.id)
+          //   .delete();
         }
       });
       this.premios.forEach(item => {
         if (!item.monto) {
-          db.collection("premios")
-            .doc(item.id)
-            .delete();
+          // db.collection("premios")
+          //   .doc(item.id)
+          //   .delete();
         }
       });
     }
-  },
-  firestore: {
-    colaboradores: db.collection("colaboradores"),
-    premios: db.collection("premios")
   }
 };
 </script>

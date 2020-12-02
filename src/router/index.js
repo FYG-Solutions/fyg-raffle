@@ -3,23 +3,28 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import LoadData from "../views/LoadData.vue";
+import firebase from "firebase";
 
 Vue.use(VueRouter);
 
 const routes = [
+  { path: "*", redirect: "/login" },
+  { path: "/", redirect: "/login" },
   {
     path: "",
     component: () => import("@/layouts/main/Main.vue"),
     children: [
       {
-        path: "/",
+        path: "/home",
         name: "Home",
-        component: Home
+        component: Home,
+        meta: { requiresAuth: true }
       },
       {
         path: "/load",
-        name: "Cargar información",
-        component: LoadData
+        name: "LoadData",
+        component: LoadData,
+        meta: { requiresAuth: true }
       }
     ]
   },
@@ -28,7 +33,7 @@ const routes = [
     component: () => import("@/layouts/full-page/FullPage.vue"),
     children: [
       {
-        path: "login",
+        path: "/login",
         name: "Login",
         component: Login
       }
@@ -40,6 +45,19 @@ const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  const currentUser = firebase.auth().currentUser;
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+
+  if (requiresAuth && !currentUser) {
+    next("login");
+  } else if (!requiresAuth && currentUser) {
+    next("home");
+  } else {
+    next();
+  }
 });
 
 export default router;

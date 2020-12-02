@@ -129,16 +129,16 @@
 </template>
 
 <script>
-import { db } from "@/firebase/firebaseConnection";
+import firebase from "firebase";
 
 export default {
   name: "Home",
   data() {
     return {
       colaboradores: [],
+      premios: [],
       btnSiguienteParticipanteDisabled: false,
       btnSortearActivoDisabled: false,
-      premios: [],
       colaboradorActivo: null,
       animacionSiguienteColaborador: { nombre: "" },
       premiosParaSorteo: [],
@@ -156,6 +156,9 @@ export default {
       duracionSorteo: 3000,
       duracionSiguienteColaborador: 20
     };
+  },
+  created() {
+    this.loadData();
   },
   computed: {
     /**
@@ -208,17 +211,47 @@ export default {
           });
         }
       }
+
+      // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
       return premiosPendientes.sort(() => Math.random() - 0.5);
     }
   },
   methods: {
+    async loadData() {
+      let premiosRef = await firebase.firestore().collection("premios");
+      let colaboradoresRef = await firebase
+        .firestore()
+        .collection("colaboradores");
+
+      premiosRef.onSnapshot(snap => {
+        this.premios = [];
+        snap.forEach(doc => {
+          let premio = doc.data();
+          premio.id = doc.id;
+          this.premios.push(premio);
+        });
+      });
+
+      colaboradoresRef.onSnapshot(snap => {
+        this.colaboradores = [];
+        snap.forEach(doc => {
+          let colaborador = doc.data();
+          colaborador.id = doc.id;
+          this.colaboradores.push(colaborador);
+        });
+      });
+    },
     /**
      * Método que permie obtener al siguiente participante.
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
       let duracionAnimacion = this.duracionSiguienteColaborador;
-      let randomValue = Math.random() * (50 - 25) + 25;
+      let randomValue =
+        Math.random() *
+          (this.colaboradores.length -
+            parseInt(this.colaboradores.length / 2)) +
+        parseInt(this.colaboradores.length / 2);
 
       for (let i = 1; i < randomValue; i++) {
         await new Promise(r => setTimeout(r, duracionAnimacion));
@@ -274,14 +307,15 @@ export default {
       };
       let colaborador = { ...this.colaboradorActivo };
       colaborador.premio = resultadoSorteo.monto;
-      db.collection("premios")
-        .doc(resultadoSorteo.id)
-        .set(premio)
-        .then(() => {});
-      db.collection("colaboradores")
-        .doc(this.colaboradorActivo.id)
-        .set(colaborador)
-        .then(() => {});
+      console.log(premio);
+      // db.collection("premios")
+      //   .doc(resultadoSorteo.id)
+      //   .set(premio)
+      //   .then(() => {});
+      // db.collection("colaboradores")
+      //   .doc(this.colaboradorActivo.id)
+      //   .set(colaborador)
+      //   .then(() => {});
     },
     /**
      * Permite obtener el resultado del sorteo.
@@ -331,11 +365,6 @@ export default {
 
       return array;
     }
-  },
-
-  firestore: {
-    colaboradores: db.collection("colaboradores"),
-    premios: db.collection("premios")
   }
 };
 </script>
