@@ -27,7 +27,7 @@
                   :to="{ name: 'Colaboradores' }"
                   class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700"
                 >
-                  Colaboradores
+                  Premios
                 </router-link>
               </div>
             </div>

@@ -82,12 +82,12 @@
               :key="index"
               class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
               :class="{
-                'bg-green-200 text-green-700': premio.monto !== '$0,00',
-                'bg-red-200 text-red-700': premio.monto === '$0,00'
+                'bg-green-200 text-green-700': premio.monto !== '$0.00',
+                'bg-red-200 text-red-700': premio.monto === '$0.00'
               }"
             >
               <feather
-                :type="premio.monto !== '$0,00' ? 'gift' : 'frown'"
+                :type="premio.monto !== '$0.00' ? 'gift' : 'frown'"
               ></feather>
             </div>
           </div>
@@ -110,12 +110,12 @@
                   v-if="premio.visible"
                   class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
                   :class="{
-                    'bg-green-200 text-green-700': premio.monto !== '$0,00',
-                    'bg-red-200 text-red-700': premio.monto === '$0,00'
+                    'bg-green-200 text-green-700': premio.monto !== '$0.00',
+                    'bg-red-200 text-red-700': premio.monto === '$0.00'
                   }"
                 >
                   <feather
-                    :type="premio.monto !== '$0,00' ? 'gift' : 'frown'"
+                    :type="premio.monto !== '$0.00' ? 'gift' : 'frown'"
                   ></feather>
                 </div>
               </transition>
@@ -179,7 +179,7 @@ export default {
     regalosConPremioRestantes() {
       return this.premios.filter(
         item =>
-          item.monto !== "$0,00" && item.estatus === this.estatus.PENDIENTE
+          item.monto !== "$0.00" && item.estatus === this.estatus.PENDIENTE
       ).length;
     },
     /**
@@ -190,7 +190,7 @@ export default {
     regalosSinPremiosRestantes() {
       return this.premios.filter(
         item =>
-          item.monto === "$0,00" && item.estatus === this.estatus.PENDIENTE
+          item.monto === "$0.00" && item.estatus === this.estatus.PENDIENTE
       ).length;
     },
     /**
@@ -328,7 +328,7 @@ export default {
         item => item.visible === true
       )[0];
 
-      if (resultado.monto !== "$0,00") {
+      if (resultado.monto !== "$0.00") {
         this.$swal({
           title: "¡Felicidades!",
           text: `¡ganaste ${resultado.monto}!`,
