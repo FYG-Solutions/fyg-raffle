@@ -81,11 +81,11 @@ export default {
       let colaboradores = jsonData["colaboradores"];
       let premios = jsonData["premios"];
 
-      // Genera los premios de $0.00
+      // Genera los premios de $ 0
       while (premios.length < colaboradores.length) {
         let premioVacio = {
           estatus: "pendiente",
-          monto: "$0.00"
+          monto: 0
         };
         premios.push(premioVacio);
       }

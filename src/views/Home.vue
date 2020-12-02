@@ -80,15 +80,10 @@
             <div
               v-for="(premio, index) in listaDePremiosPendientes"
               :key="index"
-              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-              :class="{
-                'bg-green-200 text-green-700': premio.monto !== '$0.00',
-                'bg-red-200 text-red-700': premio.monto === '$0.00'
-              }"
+              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-green-200 text-green-700"
             >
-              <feather
-                :type="premio.monto !== '$0.00' ? 'gift' : 'frown'"
-              ></feather>
+              <feather type="gift"></feather>
+              {{ premio.monto }}
             </div>
           </div>
         </div>
@@ -99,7 +94,7 @@
           v-if="premiosParaSorteoVisible"
           class="premios-pendientes-container w-full"
         >
-          <p class="mt-5 text-xl">
+          <p v-if="estaSorteando" class="mt-5 text-xl">
             Sorteando premios...
           </p>
 
@@ -108,15 +103,10 @@
               <transition name="bounce" :key="index">
                 <div
                   v-if="premio.visible"
-                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-                  :class="{
-                    'bg-green-200 text-green-700': premio.monto !== '$0.00',
-                    'bg-red-200 text-red-700': premio.monto === '$0.00'
-                  }"
+                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full bg-green-200 text-green-700"
                 >
-                  <feather
-                    :type="premio.monto !== '$0.00' ? 'gift' : 'frown'"
-                  ></feather>
+                  <feather type="gift"></feather>
+                  {{ premio.monto }}
                 </div>
               </transition>
             </template>
@@ -154,7 +144,8 @@ export default {
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
       duracionSorteo: 3000,
-      duracionSiguienteColaborador: 20
+      duracionSiguienteColaborador: 20,
+      estaSorteando: true
     };
   },
   created() {
@@ -168,7 +159,7 @@ export default {
      */
     colaboradoresRestantes() {
       return this.colaboradores.filter(
-        item => item.premio === this.estatus.PENDIENTE
+        colaborador => colaborador.premio === this.estatus.PENDIENTE
       );
     },
     /**
@@ -178,8 +169,7 @@ export default {
      */
     regalosConPremioRestantes() {
       return this.premios.filter(
-        item =>
-          item.monto !== "$0.00" && item.estatus === this.estatus.PENDIENTE
+        item => item.monto !== 0 && item.estatus === this.estatus.PENDIENTE
       ).length;
     },
     /**
@@ -189,8 +179,7 @@ export default {
      */
     regalosSinPremiosRestantes() {
       return this.premios.filter(
-        item =>
-          item.monto === "$0.00" && item.estatus === this.estatus.PENDIENTE
+        item => item.monto === 0 && item.estatus === this.estatus.PENDIENTE
       ).length;
     },
     /**
@@ -201,19 +190,44 @@ export default {
     listaDePremiosPendientes() {
       // Filtra los premios pendientes
       let premiosPendientes = [];
+      let premiosGanadores = [];
+      let premiosPerdedores = [];
 
       for (let i = 0; i < this.premios.length; i++) {
         if (this.premios[i].estatus === this.estatus.PENDIENTE) {
-          premiosPendientes.push({
-            id: this.premios[i].id,
-            premio: this.estatus.PENDIENTE,
-            monto: this.premios[i].monto
-          });
+          // Valida si es premio ganador o perdedor
+          if (this.premios[i].monto > 0) {
+            premiosGanadores.push({
+              id: this.premios[i].id,
+              premio: this.estatus.PENDIENTE,
+              monto: parseInt(this.premios[i].monto)
+            });
+          } else {
+            premiosPerdedores.push({
+              id: this.premios[i].id,
+              premio: this.estatus.PENDIENTE,
+              monto: parseInt(this.premios[i].monto)
+            });
+          }
         }
+      }
+      // Ordena los premios ganadores
+      premiosPendientes = premiosGanadores
+        .filter(item => item.monto > 0)
+        .sort((a, b) => b.monto - a.monto);
+
+      // Agrega los premios ganadores al arreglo de premios perdedores
+      while (premiosPerdedores.length > 0) {
+        let premioPerdedor = premiosPerdedores.pop();
+
+        let min = 2;
+        let max = premiosPendientes.length;
+        let rand = parseInt(Math.random() * (max - min) + min);
+        premiosPendientes.splice(rand, 0, premioPerdedor);
       }
 
       // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
-      return premiosPendientes.sort(() => Math.random() - 0.5);
+      return premiosPendientes;
     }
   },
   methods: {
@@ -249,13 +263,13 @@ export default {
       let duracionAnimacion = this.duracionSiguienteColaborador;
       let randomValue =
         Math.random() *
-          (this.colaboradores.length -
-            parseInt(this.colaboradores.length / 2)) +
-        parseInt(this.colaboradores.length / 2);
+          (this.colaboradoresRestantes.length -
+            parseInt(this.colaboradoresRestantes.length / 2)) +
+        parseInt(this.colaboradoresRestantes.length / 2);
 
       for (let i = 1; i < randomValue; i++) {
         await new Promise(r => setTimeout(r, duracionAnimacion));
-        this.animacionSiguienteColaborador = this.colaboradores[i];
+        this.animacionSiguienteColaborador = this.colaboradoresRestantes[i];
       }
       this.colaboradorActivo = this.animacionSiguienteColaborador;
       this.animacionSiguienteColaborador = { nombre: "" };
@@ -277,19 +291,10 @@ export default {
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
 
-      let arrayPosiciones = [];
-
-      for (let i = 0; i < this.premiosParaSorteo.length; i++) {
-        arrayPosiciones.push(i);
-      }
-
-      // Reordena las posiciones
-      arrayPosiciones = this.shuffle(arrayPosiciones);
-
       // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
-      for (let i = 1; i < this.premiosParaSorteo.length; i++) {
+      for (let i = 0; i < this.premiosParaSorteo.length - 1; i++) {
         await new Promise(r => setTimeout(r, duracion));
-        this.premiosParaSorteo[arrayPosiciones[i]].visible = false;
+        this.premiosParaSorteo[i].visible = false;
       }
       await new Promise(r => setTimeout(r, 1000));
 
@@ -324,11 +329,12 @@ export default {
      * Permite obtener el resultado del sorteo.
      */
     getResultadoSorteo() {
+      this.estaSorteando = false;
       let resultado = this.premiosParaSorteo.filter(
         item => item.visible === true
       )[0];
 
-      if (resultado.monto !== "$0.00") {
+      if (resultado.monto !== 0) {
         this.$swal({
           title: "¡Felicidades!",
           text: `¡ganaste ${resultado.monto}!`,
@@ -342,31 +348,6 @@ export default {
         });
       }
       return resultado;
-    },
-    /**
-     * Método que recibe un array de elementos y los retorna en orden aleatorio.
-     *
-     * @param array Array de elementos a barajar
-     * @returns {Array<number>}
-     */
-    shuffle(array) {
-      let currentIndex = array.length,
-        temporaryValue,
-        randomIndex;
-
-      // While there remain elements to shuffle...
-      while (0 !== currentIndex) {
-        // Pick a remaining element...
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex -= 1;
-
-        // And swap it with the current element.
-        temporaryValue = array[currentIndex];
-        array[currentIndex] = array[randomIndex];
-        array[randomIndex] = temporaryValue;
-      }
-
-      return array;
     }
   }
 };

@@ -67,20 +67,7 @@ export default {
           if (colaborador.premio === "pendiente") {
             colaborador.estatus = "Pendiente";
             colaborador.premio = 0;
-          } else if (colaborador.premio === "$0.00") {
-            colaborador.premio = 0;
-          } else if (colaborador.premio === "$2,500.00") {
-            colaborador.premio = 2500;
-          } else if (colaborador.premio === "$3,000.00") {
-            colaborador.premio = 3000;
-          } else if (colaborador.premio === "$5,000.00") {
-            colaborador.premio = 5000;
-          } else if (colaborador.premio === "$7,500.00") {
-            colaborador.premio = 7500;
-          } else if (colaborador.premio === "$10,000.00") {
-            colaborador.premio = 10000;
           }
-
           colaborador.id = doc.id;
           this.colaboradores.push(colaborador);
         });
