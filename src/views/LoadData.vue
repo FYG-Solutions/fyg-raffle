@@ -54,14 +54,14 @@ export default {
       premiosRef.onSnapshot(snap => {
         this.premios = [];
         snap.forEach(doc => {
-          let todo = doc.data();
-          todo.id = doc.id;
-          this.premios.push(todo);
+          let premio = doc.data();
+          premio.id = doc.id;
+          this.premios.push(premio);
         });
       });
 
       colaboradoresRef.onSnapshot(snap => {
-        this.premios = [];
+        this.colaboradores = [];
         snap.forEach(doc => {
           let colaborador = doc.data();
           colaborador.id = doc.id;
@@ -102,38 +102,50 @@ export default {
       this.limpiarDatos();
     },
     eliminarDatos: function() {
-      // this.colaboradores.forEach(item => {
-      //   db.collection("colaboradores")
-      //     .doc(item.id)
-      //     .delete();
-      // });
-      // this.premios.forEach(item => {
-      //   db.collection("premios")
-      //     .doc(item.id)
-      //     .delete();
-      // });
+      this.colaboradores.forEach(item => {
+        firebase
+          .firestore()
+          .collection("colaboradores")
+          .doc(item.id)
+          .delete();
+      });
+      this.premios.forEach(item => {
+        firebase
+          .firestore()
+          .collection("premios")
+          .doc(item.id)
+          .delete();
+      });
     },
     cargarColaborador(colaborador) {
-      // db.collection("colaboradores").add(colaborador);
-      console.log(colaborador);
+      firebase
+        .firestore()
+        .collection("colaboradores")
+        .add(colaborador);
     },
     cargarPremio(premio) {
-      // db.collection("premios").add(premio);
-      console.log(premio);
+      firebase
+        .firestore()
+        .collection("premios")
+        .add(premio);
     },
     limpiarDatos() {
       this.colaboradores.forEach(item => {
         if (!item.codigo) {
-          // db.collection("colaboradores")
-          //   .doc(item.id)
-          //   .delete();
+          firebase
+            .firestore()
+            .collection("colaboradores")
+            .doc(item.id)
+            .delete();
         }
       });
       this.premios.forEach(item => {
         if (!item.monto) {
-          // db.collection("premios")
-          //   .doc(item.id)
-          //   .delete();
+          firebase
+            .firestore()
+            .collection("premios")
+            .doc(item.id)
+            .delete();
         }
       });
     }

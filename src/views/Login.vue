@@ -66,7 +66,6 @@
             Acceder
           </button>
         </div>
-        {{ $data }}
       </form>
     </div>
   </div>
@@ -88,12 +87,11 @@ export default {
       firebase
         .auth()
         .signInWithEmailAndPassword(this.email, this.password)
-        .then(user => {
-          console.log(user);
+        .then(() => {
           this.$router.replace("home");
         })
         .catch(error => {
-          console.log(error);
+          console.error(error);
         });
     }
   }

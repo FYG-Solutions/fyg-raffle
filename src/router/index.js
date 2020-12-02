@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import Colaboradores from "../views/Colaboradores.vue";
 import Login from "../views/Login.vue";
 import LoadData from "../views/LoadData.vue";
 import firebase from "firebase";
@@ -18,6 +19,12 @@ const routes = [
         path: "/home",
         name: "Home",
         component: Home,
+        meta: { requiresAuth: true }
+      },
+      {
+        path: "/colaboradores",
+        name: "Colaboradores",
+        component: Colaboradores,
         meta: { requiresAuth: true }
       },
       {

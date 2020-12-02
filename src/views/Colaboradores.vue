@@ -132,7 +132,7 @@
 import firebase from "firebase";
 
 export default {
-  name: "Home",
+  name: "Colaboradores",
   data() {
     return {
       colaboradores: [],
