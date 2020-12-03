@@ -165,8 +165,6 @@ export default {
     colaboradoresRestantes(val) {
       if (val.length === 0) {
         this.btnSiguienteParticipanteDisabled = true;
-      } else {
-        this.btnSiguienteParticipanteDisabled = false;
       }
     }
   },
