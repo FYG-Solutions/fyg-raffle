@@ -85,7 +85,8 @@ export default {
       while (premios.length < colaboradores.length) {
         let premioVacio = {
           estatus: "pendiente",
-          monto: 0
+          monto: 0,
+          premioFinal: false
         };
         premios.push(premioVacio);
       }

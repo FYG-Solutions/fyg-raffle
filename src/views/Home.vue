@@ -87,7 +87,9 @@
               }"
             >
               <feather :type="premio.monto !== 0 ? 'gift' : 'frown'"></feather>
-              {{ premio.monto }}
+              <span class="ml-1">
+                {{ premio.monto }}
+              </span>
             </div>
           </div>
         </div>
@@ -151,7 +153,7 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 500,
+      duracionSorteo: 300,
       duracionSiguienteColaborador: 20,
       estaSorteando: true
     };
@@ -211,25 +213,22 @@ export default {
       for (let i = 0; i < this.premios.length; i++) {
         if (this.premios[i].estatus === this.estatus.PENDIENTE) {
           // Valida si es premio ganador o perdedor
-          if (this.premios[i].monto > 0) {
-            premiosGanadores.push({
-              id: this.premios[i].id,
-              premio: this.estatus.PENDIENTE,
-              monto: parseInt(this.premios[i].monto)
-            });
+          const premio = {
+            id: this.premios[i].id,
+            premio: this.estatus.PENDIENTE,
+            monto: this.premios[i].monto,
+            premioFinal: this.premios[i].premioFinal
+          };
+          if (this.premios[i].monto !== 0) {
+            premiosGanadores.push(premio);
           } else {
-            premiosPerdedores.push({
-              id: this.premios[i].id,
-              premio: this.estatus.PENDIENTE,
-              monto: parseInt(this.premios[i].monto)
-            });
+            premiosPerdedores.push(premio);
           }
         }
       }
       // Ordena los premios ganadores
-      premiosPendientes = premiosGanadores
-        .filter(item => item.monto > 0)
-        .sort((a, b) => b.monto - a.monto);
+      premiosPendientes = premiosGanadores.filter(item => item.monto !== 0);
+      // .sort((a, b) => b.monto - a.monto);
 
       // Agrega los premios ganadores al arreglo de premios perdedores
       while (premiosPerdedores.length > 0) {
@@ -237,7 +236,7 @@ export default {
 
         let min = 1;
         let max = premiosPendientes.length;
-        let rand = parseInt(Math.random() * (max - min) + min);
+        let rand = Math.random() * (max - min) + min;
         premiosPendientes.splice(rand + 1, 0, premioPerdedor);
       }
 
@@ -296,7 +295,7 @@ export default {
      */
     async sortearPremio() {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
-      this.premiosParaSorteo = await this.listaDePremiosPendientes.map(item => {
+      this.premiosParaSorteo = this.listaDePremiosPendientes.map(item => {
         item.visible = true;
         return item;
       });
@@ -306,9 +305,7 @@ export default {
       // Muestra la lista premiosParaSorteo
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
-      while (
-        this.premiosParaSorteo.filter(i => i.visible === true).length > 1
-      ) {
+      while (this.premiosParaSorteo.length > 1) {
         await new Promise(r => setTimeout(r, duracion));
         let item = this.premiosParaSorteo.filter(i => i.visible === true)[
           Math.floor(
@@ -316,15 +313,25 @@ export default {
               this.premiosParaSorteo.filter(i => i.visible === true).length
           )
         ];
-        if (item.monto === '')
-        item.visible = false;
-        console.log(item);
+
+        // Si quedan dos regalos, y aun existe el regalo final, lo elimina directamente
+        if (this.premiosParaSorteo.length === 2) {
+          const removeIndex = this.premiosParaSorteo.findIndex(
+            k => k.premioFinal === true
+          );
+          if (removeIndex !== -1) {
+            // remove object
+            this.premiosParaSorteo.splice(removeIndex, 1);
+            continue;
+          }
+        }
+        // get index of object with id of 37
+        const removeIndex = this.premiosParaSorteo.findIndex(
+          j => j.id === item.id
+        );
+        // remove object
+        this.premiosParaSorteo.splice(removeIndex, 1);
       }
-      // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
-      // for (let i = 0; i < this.premiosParaSorteo.length - 1; i++) {
-      //   await new Promise(r => setTimeout(r, duracion));
-      //   this.premiosParaSorteo[i].visible = false;
-      // }
       await new Promise(r => setTimeout(r, 1000));
 
       let resultadoSorteo = this.getResultadoSorteo();
@@ -359,9 +366,8 @@ export default {
      */
     getResultadoSorteo() {
       this.estaSorteando = false;
-      let resultado = this.premiosParaSorteo.filter(
-        item => item.visible === true
-      )[0];
+      let resultado = this.premiosParaSorteo[0];
+
 
       if (resultado.monto !== 0) {
         this.$swal({
