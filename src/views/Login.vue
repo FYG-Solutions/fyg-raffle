@@ -6,7 +6,7 @@
       <div>
         <img
           class="mx-auto h-48 w-auto"
-          src="https://fygsolutions.com/wp-content/uploads/2018/12/FYGS-WEB.png"
+          src="https://fygsolutions.com/wp-content/uploads/2021/07/cropped-logo-final.png"
           alt="Workflow"
         />
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">

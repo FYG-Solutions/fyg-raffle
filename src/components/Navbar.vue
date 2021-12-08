@@ -7,7 +7,7 @@
             <div class="flex-shrink-0">
               <img
                 class="h-16 w-20"
-                src="https://fygsolutions.com/wp-content/uploads/2018/12/FYGS-WEB.png"
+                src="https://fygsolutions.com/wp-content/uploads/2021/07/cropped-logo-final.png"
                 alt="Workflow"
               />
             </div>

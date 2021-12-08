@@ -142,8 +142,6 @@ export default {
       colaboradorActivo: null,
       animacionSiguienteColaborador: { nombre: "" },
       premiosParaSorteo: [],
-      BONOS_PREMIADOS: 5,
-      BONOS_VACIOS: 2,
       sorteoActivo: false,
       estatus: {
         CON_PREMIO: "conPremio",
@@ -308,12 +306,25 @@ export default {
       // Muestra la lista premiosParaSorteo
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
-
-      // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
-      for (let i = 0; i < this.premiosParaSorteo.length - 1; i++) {
+      while (
+        this.premiosParaSorteo.filter(i => i.visible === true).length > 1
+      ) {
         await new Promise(r => setTimeout(r, duracion));
-        this.premiosParaSorteo[i].visible = false;
+        let item = this.premiosParaSorteo.filter(i => i.visible === true)[
+          Math.floor(
+            Math.random() *
+              this.premiosParaSorteo.filter(i => i.visible === true).length
+          )
+        ];
+        if (item.monto === '')
+        item.visible = false;
+        console.log(item);
       }
+      // Inicia a ocultar bonos, con contador en 1, para dejar 1 sólo premio
+      // for (let i = 0; i < this.premiosParaSorteo.length - 1; i++) {
+      //   await new Promise(r => setTimeout(r, duracion));
+      //   this.premiosParaSorteo[i].visible = false;
+      // }
       await new Promise(r => setTimeout(r, 1000));
 
       let resultadoSorteo = this.getResultadoSorteo();
