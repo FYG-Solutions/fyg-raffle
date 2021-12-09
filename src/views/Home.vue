@@ -128,6 +128,7 @@ export default {
       btnSortearActivoDisabled: false,
       colaboradorActivo: null,
       animacionSiguienteColaborador: { nombre: "" },
+      siguienteColaborador: { nombre: "" },
       premiosParaSorteo: [],
       sorteoActivo: false,
       estatus: {
@@ -138,7 +139,7 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 5000,
+      duracionSorteo: 500,
       duracionSiguienteColaborador: 20,
       estaSorteando: true
     };
@@ -259,9 +260,12 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      // let duracionAnimacion = this.duracionSiguienteColaborador;
+      let duracionAnimacion = this.duracionSiguienteColaborador;
       let colaboradoresFiltrados = [];
+      let colaboradoresAnimacion = [...this.colaboradores];
+      console.log(colaboradoresAnimacion);
       // Rellena con los colaboradores nuevos, si es que existen.
+      // eslint-disable-next-line
       const colaboradoresNuevos = this.colaboradoresRestantes.filter(
         i => i["colaboradorAntiguo"] === false
       );
@@ -270,18 +274,24 @@ export default {
       } else {
         Object.assign(colaboradoresFiltrados, this.colaboradoresRestantes);
       }
-      console.log(colaboradoresFiltrados);
 
+      // Animación para colaboradores
+      for (let i = this.colaboradores.length - 1; i >= 0; i--) {
+        await new Promise(r => setTimeout(r, duracionAnimacion));
+        this.animacionSiguienteColaborador = colaboradoresAnimacion.splice(
+          Math.floor(Math.random() * colaboradoresAnimacion.length),
+          1
+        )[0];
+      }
+      // Elección del colaborador
       for (let i = colaboradoresFiltrados.length - 1; i >= 0; i--) {
-        // await new Promise(r => setTimeout(r, duracionAnimacion));
-
-        this.animacionSiguienteColaborador = colaboradoresFiltrados.splice(
+        this.siguienteColaborador = colaboradoresFiltrados.splice(
           Math.floor(Math.random() * colaboradoresFiltrados.length),
           1
         )[0];
       }
-      this.colaboradorActivo = this.animacionSiguienteColaborador;
-      this.animacionSiguienteColaborador = { nombre: "" };
+      this.colaboradorActivo = this.siguienteColaborador;
+      this.siguienteColaborador = { nombre: "" };
       this.btnSiguienteParticipanteDisabled = true;
     },
     /**
@@ -362,6 +372,9 @@ export default {
      * Permite obtener el resultado del sorteo.
      */
     formatCurrency(value) {
+      if (isNaN(value)) {
+        return value;
+      }
       let val = (value / 1).toFixed(2);
       return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
