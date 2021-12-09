@@ -64,15 +64,11 @@
             <div
               v-for="(premio, index) in listaDePremiosPendientes"
               :key="index"
-              class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-              :class="{
-                'bg-green-200 text-green-700': premio.monto !== 0,
-                'bg-red-200 text-red-700': premio.monto === 0
-              }"
+              class="bg-blue-200 text-blue-700 mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
             >
-              <feather :type="premio.monto !== 0 ? 'gift' : 'frown'"></feather>
+              <feather type="gift"></feather>
               <span class="ml-1">
-                {{ premio.monto }}
+                ?
               </span>
             </div>
           </div>
@@ -93,16 +89,12 @@
               <transition name="bounce" :key="index">
                 <div
                   v-if="premio.visible"
-                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-                  :class="{
-                    'bg-green-200 text-green-700': premio.monto !== 0,
-                    'bg-red-200 text-red-700': premio.monto === 0
-                  }"
+                  class="bg-blue-200 text-blue-700 mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
                 >
-                  <feather
-                    :type="premio.monto !== 0 ? 'gift' : 'frown'"
-                  ></feather>
-                  {{ premio.monto }}
+                  <feather type="gift"></feather>
+                  <span class="ml-1">
+                    ?
+                  </span>
                 </div>
               </transition>
             </template>

@@ -1,0 +1,109 @@
+{
+  "premios": [
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": "viaje", "premioFinal": true }
+  ],
+  "colaboradores": [
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 1",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 2",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 3",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 4",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 5",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 6",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 7",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 8",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 9",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 10",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 11",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Colaborador Antiguo 12",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 1",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 2",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 3",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 4",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 5",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 6",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "colaborador Nuevo 7",
+      "colaboradorAntiguo": false
+    }
+  ]
+}
