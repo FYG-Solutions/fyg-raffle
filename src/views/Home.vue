@@ -10,22 +10,6 @@
           Colaboradores restantes:
         </p>
       </div>
-      <div class="mt-3 flex-auto">
-        <span class="font-semibold text-3xl text-green-600">
-          {{ regalosConPremioRestantes }}
-        </span>
-        <p>
-          Regalos con premio restantes:
-        </p>
-      </div>
-      <div class="mt-3 flex-auto">
-        <span class="font-semibold text-3xl text-red-600">
-          {{ regalosSinPremiosRestantes }}
-        </span>
-        <p>
-          Regalos sin premios restantes:
-        </p>
-      </div>
     </div>
     <!-- /HEADER Details -->
 
@@ -275,14 +259,23 @@ export default {
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
       let duracionAnimacion = this.duracionSiguienteColaborador;
-      let colAux = [];
-      Object.assign(colAux, this.colaboradoresRestantes);
+      let colaboradoresFiltrados = [];
+      // Rellena con los colaboradores nuevos, si es que existen.
+      const colaboradoresNuevos = this.colaboradoresRestantes.filter(
+        i => i["colaboradorAntiguo"] === false
+      );
+      if (colaboradoresNuevos.length > 0) {
+        Object.assign(colaboradoresFiltrados, colaboradoresNuevos);
+      } else {
+        Object.assign(colaboradoresFiltrados, this.colaboradoresRestantes);
+      }
+      console.log(colaboradoresFiltrados);
 
-      for (let i = colAux.length - 1; i >= 0; i--) {
+      for (let i = colaboradoresFiltrados.length - 1; i >= 0; i--) {
         await new Promise(r => setTimeout(r, duracionAnimacion));
 
-        this.animacionSiguienteColaborador = colAux.splice(
-          Math.floor(Math.random() * colAux.length),
+        this.animacionSiguienteColaborador = colaboradoresFiltrados.splice(
+          Math.floor(Math.random() * colaboradoresFiltrados.length),
           1
         )[0];
       }
@@ -367,7 +360,6 @@ export default {
     getResultadoSorteo() {
       this.estaSorteando = false;
       let resultado = this.premiosParaSorteo[0];
-
 
       if (resultado.monto !== 0) {
         this.$swal({
