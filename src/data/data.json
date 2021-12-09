@@ -30,226 +30,248 @@
   "colaboradores": [
     {
       "premio": "pendiente",
-      "nombre": "Patricia Sosa Sanchez"
+      "nombre": "Patricia Sosa Sanchez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Cesar Alejandro Miranda Bravo"
+      "nombre": "Cesar Alejandro Miranda Bravo",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jehu Alfredo Soto Chimal"
+      "nombre": "Ramses Martinez Ortiz",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Ramses Martinez Ortiz"
+      "nombre": "Mario Alberto Vilchis Nava",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Mario Alberto Vilchis Nava"
+      "nombre": "Carlos Ignacio Juarez Hernandez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Carlos Ignacio Juarez Hernandez"
+      "nombre": "Alexis Almaraz Robles",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Alexis Almaraz Robles"
+      "nombre": "Porfirio Martinez Martinez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Marco Antonio Lortia Prado"
+      "nombre": "Gonzalo Abiut Arteaga Barajas",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Cesar Alejandro Morales Saucedo"
+      "nombre": "Ricardo Peña Vargas",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jesus Carbajal Montes"
+      "nombre": "Gerardo Pérez Soria",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Juan Alberto Bautista Grande"
+      "nombre": "Jose Alberto Villaseñor Suarez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Porfirio Martìnez Martìnez"
+      "nombre": "Alejandro Galicia García",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Chistian Salazar Galarza"
+      "nombre": "Manuel Antonio Ramirez Gomez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Gonzalo Abiut Arteaga Barajas"
+      "nombre": "Brenda Cecilia Hernandez Perez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Ricardo Peña Vargas"
+      "nombre": "Eric Yael Gamboa Solis",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Gerardo Pérez Soria"
+      "nombre": "Alice Mayle Rojas Barrios",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Jose Alberto Villaseñor Suarez"
+      "nombre": "Miguel Angel Castelán Mata",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Ricardo Alan Casimiro Lopez"
+      "nombre": "Mariana Jimenez Jimenez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Alejandro Galicia García"
+      "nombre": "Luis Fernando Cruz Rivera",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Manuel Antonio Ramirez Gomez"
+      "nombre": "Adrián Moisés Camacho Torrea",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Brenda Cecilia Hernandez Perez"
+      "nombre": "Javier Pérez Pérez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Eric Yael Gamboa Solis"
+      "nombre": "Juan Carlos Vazquez Orozco",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Angel Martin Ortiz Ruiz"
+      "nombre": "Christian Oswaldo Lopez Leon",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Lucero Padilla Leon"
+      "nombre": "Marco Antonio Lortia Prado",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Alejandro Joao Gonzalez Gonzalez"
+      "nombre": "Francisco Penedo Gonzalez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Jorge Esquivel Garcia"
+      "nombre": "Andrea Aguirre Rendon",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Alice Mayle Rojas Barrios"
+      "nombre": "Monserrat Mondragon Mancera",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Miguel Angel Castelán Mata"
+      "nombre": "Carlos Alberto Gomez Gonzalez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Eva Maria Alcazar Perez"
+      "nombre": "Veronica Leticia Gonzalez Castelan",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Maribel Barranco Rodriguez"
+      "nombre": "Andrew Estrada Torrea",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "Monca Rocio Vallarta Soto",
+      "nombre": "",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Mariana Jimenez Jimenez"
+      "nombre": "Jose Luis Ramirez Rico",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jonathan Martinez Hernandez"
+      "nombre": "Adrian Rojas Zarza",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Rodrigo Chavez Mercado"
+      "nombre": "Diego Armando Garcia Guillen",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Omar Ruiz Gutierrez"
+      "nombre": "Diego Estrada Torrea",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Luis Fernando Cruz Rivera"
+      "nombre": "Hector Isaias Trujillo Galicia",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Adrián Moisés Camacho Torrea"
+      "nombre": "Jorge Manuel Martinez Perez",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Naomi Paola Jardine Torres"
+      "nombre": "Ernesto de la Fraga Acosta",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-
-      "nombre": "Adolfo Daniel Roman Carbajal"
+      "nombre": "Juan Miguel Angel Calderon Zarco",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Elisabet Adyani Vasquez Martinez"
+      "nombre": "Edgar Sanchez Garcia",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Laura Karina Sánchez  Ramirez"
+      "nombre": "Juan Carlos Hernandez Cabrebra",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Flavio Rico Mendez"
+      "nombre": "Pavel Alejandro Tejeda Bracho",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Javier Pérez Pérez"
+      "nombre": "Adnres juarez Hernandez",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Juan Carlos Vazquez Orozco"
+      "nombre": "Luis Enrique Herrera Rodriguez",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Christian Oswaldo Lopez"
+      "nombre": "Adolfo de Ávila Galván",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "FRANCISCO PENEDO GONZALEZ"
+      "nombre": "Daniel Navarro Díaz",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Mauricio Olascoaga Garcia"
+      "nombre": "Eliott Hans Novelo Montiel",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Mauricio Ivan Mejia Ramirez"
+      "nombre": "Edwin Martinez Palacios",
+      "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Andrea Aguirre Rendon"
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Enrique Arturo Rodriguez Nava"
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Isaias Cristobal Perez Gonzalez"
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Monserrat Mondragon Mancera"
+      "nombre": "Jose Eduardo Segura Derramadero",
+      "colaboradorAntiguo": false
     }
   ]
 }
