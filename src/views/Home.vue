@@ -270,9 +270,18 @@ export default {
         i => i["colaboradorAntiguo"] === false
       );
       if (colaboradoresNuevos.length > 0) {
-        Object.assign(colaboradoresFiltrados, colaboradoresNuevos);
+        if (colaboradoresNuevos.length < 2) {
+          colaboradoresFiltrados = [...colaboradoresNuevos];
+        } else {
+          colaboradoresFiltrados = [
+            ...colaboradoresNuevos,
+            this.colaboradoresRestantes[0],
+            this.colaboradoresRestantes[1],
+            this.colaboradoresRestantes[2]
+          ];
+        }
       } else {
-        Object.assign(colaboradoresFiltrados, this.colaboradoresRestantes);
+        colaboradoresFiltrados = [...this.colaboradoresRestantes];
       }
 
       // Animación para colaboradores
