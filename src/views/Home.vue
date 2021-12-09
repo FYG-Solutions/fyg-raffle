@@ -129,7 +129,7 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 300,
+      duracionSorteo: 500,
       duracionSiguienteColaborador: 20,
       estaSorteando: true
     };
