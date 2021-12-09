@@ -8,6 +8,7 @@ import "tailwindcss/tailwind.css";
 import VueSweetalert2 from "vue-sweetalert2";
 import "firebase/firestore";
 import firebase from "firebase/app";
+import "./filters/filters";
 
 Vue.config.productionTip = false;
 
@@ -27,7 +28,7 @@ var config = {
   projectId: "fyg-raffle",
   storageBucket: "fyg-raffle.appspot.com",
   messagingSenderId: "1092871946943",
-  appId: "1:1092871946943:web:2b80182574b7cc4f29bc0a",
+  appId: "1:1092871946943:web:2b80182574b7cc4f29bc0a"
 };
 
 firebase.initializeApp(config);
@@ -35,6 +36,6 @@ firebase.initializeApp(config);
 firebase.auth().onAuthStateChanged(() => {
   new Vue({
     router,
-    render: (h) => h(App),
+    render: h => h(App)
   }).$mount("#app");
 });

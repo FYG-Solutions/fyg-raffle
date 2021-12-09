@@ -349,20 +349,26 @@ export default {
     /**
      * Permite obtener el resultado del sorteo.
      */
+    formatCurrency(value) {
+      let val = (value / 1).toFixed(2)
+      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+    },
     getResultadoSorteo() {
       this.estaSorteando = false;
       let resultado = this.premiosParaSorteo[0];
-
+      let formatValue = this.formatCurrency(resultado.monto);
       if (resultado.monto !== 0) {
         this.$swal({
           title: "¡Felicidades!",
-          text: `¡ganaste ${resultado.monto}!`,
+          text: `¡ganaste $ ${formatValue}!`,
+
           icon: "success"
         });
       } else {
         this.$swal({
           title: "Ops...",
           text: `Más suerte la próxima!`,
+
           icon: "error"
         });
       }
