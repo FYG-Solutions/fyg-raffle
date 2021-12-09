@@ -270,7 +270,7 @@ export default {
         i => i["colaboradorAntiguo"] === false
       );
       if (colaboradoresNuevos.length > 0) {
-        if (colaboradoresNuevos.length < 2) {
+        if (colaboradoresNuevos.length < 3) {
           colaboradoresFiltrados = [...colaboradoresNuevos];
         } else {
           colaboradoresFiltrados = [
