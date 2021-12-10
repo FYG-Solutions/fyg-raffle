@@ -10,6 +10,22 @@
           Colaboradores restantes:
         </p>
       </div>
+<!--      <div class="mt-3 flex-auto">-->
+<!--        <span class="font-semibold text-3xl text-green-600">-->
+<!--          {{ regalosConPremioRestantes }}-->
+<!--        </span>-->
+<!--        <p>-->
+<!--          Regalos con premio restantes:-->
+<!--        </p>-->
+<!--      </div>-->
+<!--      <div class="mt-3 flex-auto">-->
+<!--        <span class="font-semibold text-3xl text-red-600">-->
+<!--          {{ regalosSinPremiosRestantes }}-->
+<!--        </span>-->
+<!--        <p>-->
+<!--          Regalos sin premios restantes:-->
+<!--        </p>-->
+<!--      </div>-->
     </div>
     <!-- /HEADER Details -->
 
@@ -102,7 +118,7 @@
                     ?
                   </span>
                   <span class="ml-1" v-else>
-                    {{ premio.monto }}
+                    {{ premio.monto | format_price }}
                   </span>
                 </div>
               </transition>
@@ -139,8 +155,8 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 500,
-      duracionSiguienteColaborador: 20,
+      duracionSorteo: 10,
+      duracionSiguienteColaborador: 10,
       estaSorteando: true
     };
   },
@@ -263,7 +279,6 @@ export default {
       let duracionAnimacion = this.duracionSiguienteColaborador;
       let colaboradoresFiltrados = [];
       let colaboradoresAnimacion = [...this.colaboradores];
-      console.log(colaboradoresAnimacion);
       // Rellena con los colaboradores nuevos, si es que existen.
       // eslint-disable-next-line
       const colaboradoresNuevos = this.colaboradoresRestantes.filter(
@@ -328,7 +343,6 @@ export default {
               this.premiosParaSorteo.filter(i => i.visible === true).length
           )
         ];
-        console.log(item);
 
         // Si quedan dos regalos, y aun existe el regalo final, lo elimina directamente
         if (this.premiosParaSorteo.length === 2) {
@@ -385,7 +399,8 @@ export default {
         return value;
       }
       let val = (value / 1).toFixed(2);
-      return val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      val = val.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      return `$ ${val}`;
     },
     getResultadoSorteo() {
       this.estaSorteando = false;
@@ -394,7 +409,7 @@ export default {
       if (resultado.monto !== 0) {
         this.$swal({
           title: "¡Felicidades!",
-          text: `¡ganaste $ ${formatValue}!`,
+          text: `¡ganaste ${formatValue}!`,
 
           icon: "success"
         });

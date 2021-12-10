@@ -11,7 +11,7 @@
         }"
       >
         <template slot="table-row" slot-scope="props">
-          <span v-if="props.column.field == 'estatus'">
+          <span v-if="props.column.field === 'estatus'">
             <span
               class="font-semibold"
               :class="
@@ -23,8 +23,8 @@
               {{ props.row.estatus }}
             </span>
           </span>
-          <span v-else-if="props.column.field == 'premio'">
-            $ {{ props.formattedRow[props.column.field] }}
+          <span v-else-if="props.column.field === 'premio'">
+            {{ props.formattedRow[props.column.field] | format_price }}
           </span>
           <span v-else>
             {{ props.formattedRow[props.column.field] }}
