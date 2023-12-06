@@ -41,6 +41,16 @@
                 </router-link>
               </div>
             </div>
+            <div class="flex justify-self-end">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <a
+                  @click="logout"
+                  class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 cursor-pointer"
+                >
+                  Logout
+              </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -64,10 +74,21 @@
 </template>
 
 <script>
+import firebase from "firebase";
+
 export default {
   name: "Navbar",
   props: {
     msg: String
   },
+  methods: {
+    logout() {
+      firebase
+      .auth()
+      .signOut().then(() => {
+        this.$router.replace("login");
+      });
+    }
+  }
 };
 </script>
