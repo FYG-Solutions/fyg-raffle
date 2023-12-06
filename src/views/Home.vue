@@ -16,7 +16,7 @@
     <div
       class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-auto my-10 mx-5"
     >
-      <div class="col-span-1 mt-5">
+      <div class="col-span-1 mt-5 h-72">
         <div class="width-full">
           <button
             :disabled="btnSiguienteParticipanteDisabled"
@@ -50,6 +50,7 @@
           >
             Sortear premio para {{ colaboradorActivo.nombre }}
           </button>
+
         </div>
 
         <!-- Lista de premios pendientes -->
@@ -108,6 +109,18 @@
           </div>
         </div>
         <!-- /Lista de premios para sortear -->
+      </div>
+      <div class="flex justify-end col-span-3">
+        <div class="mx-10 my-5 flex items-baseline space-x-4">
+          <a
+            href="#"
+            class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 flex items-center"
+            @click="reload"
+          >
+            <span class="font-semibold">Siguiente premio</span>
+            <feather type="play"></feather>
+          </a>
+        </div>
       </div>
     </div>
   </main>
@@ -229,6 +242,9 @@ export default {
     }
   },
   methods: {
+    reload() {
+      this.$parent.reload();
+    },
     async loadData() {
       let premiosRef = await firebase.firestore().collection("premios");
       let colaboradoresRef = await firebase

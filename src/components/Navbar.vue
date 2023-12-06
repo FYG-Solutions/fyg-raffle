@@ -41,18 +41,6 @@
                 </router-link>
               </div>
             </div>
-            <div class="flex-auto">
-              <div class="ml-10 flex items-baseline space-x-4 justify-end">
-                <a
-                  href="#"
-                  class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 flex items-center"
-                  @click="reload"
-                >
-                  <span>Siguiente premio</span>
-                  <feather type="play"></feather>
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -81,10 +69,5 @@ export default {
   props: {
     msg: String
   },
-  methods: {
-    reload() {
-      this.$parent.reload();
-    }
-  }
 };
 </script>
