@@ -30,7 +30,7 @@
 </template>
 
 <script>
-import jsonData from "../data/data.json";
+import jsonData from "../data/data.test.json";
 import firebase from "firebase";
 
 export default {
@@ -122,13 +122,15 @@ export default {
       firebase
         .firestore()
         .collection("colaboradores")
-        .add(colaborador);
+        .add(colaborador)
+        .catch(e => console.log(e));
     },
     cargarPremio(premio) {
       firebase
         .firestore()
         .collection("premios")
-        .add(premio);
+        .add(premio)
+        .catch(e => console.log(e));
     },
     limpiarDatos() {
       this.colaboradores.forEach(item => {

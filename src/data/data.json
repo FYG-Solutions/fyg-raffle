@@ -35,6 +35,11 @@
     },
     {
       "premio": "pendiente",
+      "nombre": "Edgar Romero",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
       "nombre": "Cesar Alejandro Miranda Bravo",
       "colaboradorAntiguo": true
     },
@@ -46,11 +51,6 @@
     {
       "premio": "pendiente",
       "nombre": "Mario Alberto Vilchis Nava",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Carlos Ignacio Juarez Hernandez",
       "colaboradorAntiguo": true
     },
     {
@@ -126,11 +126,6 @@
     {
       "premio": "pendiente",
       "nombre": "Adrián Moisés Camacho Torrea",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Javier Pérez Pérez",
       "colaboradorAntiguo": true
     },
     {
@@ -215,11 +210,6 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "Ernesto de la Fraga Acosta",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
       "nombre": "Juan Miguel Angel Calderon Zarco",
       "colaboradorAntiguo": true
     },
@@ -241,11 +231,6 @@
     {
       "premio": "pendiente",
       "nombre": "Andrés juarez Hernandez",
-      "colaboradorAntiguo": false
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Luis Enrique Herrera Rodriguez",
       "colaboradorAntiguo": false
     },
     {

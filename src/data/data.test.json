@@ -1,0 +1,24 @@
+{
+  "premios": [
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": "viaje", "premioFinal": true }
+  ],
+  "colaboradores": [
+    {
+      "premio": "pendiente",
+      "nombre": "Patricia Sosa Sanchez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Edgar Romero",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Cesar Alejandro Miranda Bravo",
+      "colaboradorAntiguo": true
+    }
+  ]
+}

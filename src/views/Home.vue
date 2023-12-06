@@ -10,22 +10,6 @@
           Colaboradores restantes:
         </p>
       </div>
-<!--      <div class="mt-3 flex-auto">-->
-<!--        <span class="font-semibold text-3xl text-green-600">-->
-<!--          {{ regalosConPremioRestantes }}-->
-<!--        </span>-->
-<!--        <p>-->
-<!--          Regalos con premio restantes:-->
-<!--        </p>-->
-<!--      </div>-->
-<!--      <div class="mt-3 flex-auto">-->
-<!--        <span class="font-semibold text-3xl text-red-600">-->
-<!--          {{ regalosSinPremiosRestantes }}-->
-<!--        </span>-->
-<!--        <p>-->
-<!--          Regalos sin premios restantes:-->
-<!--        </p>-->
-<!--      </div>-->
     </div>
     <!-- /HEADER Details -->
 
@@ -276,7 +260,9 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      let duracionAnimacion = this.duracionSiguienteColaborador;
+      console.log(this.colaboradoresRestantes.length)
+      let duracionAnimacion = parseInt(1500 / this.colaboradoresRestantes.length, 10);
+      console.log(duracionAnimacion)
       let colaboradoresFiltrados = [];
       let colaboradoresAnimacion = [...this.colaboradores];
       // Rellena con los colaboradores nuevos, si es que existen.

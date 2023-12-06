@@ -1,5 +1,23 @@
 {
   "premios": [
+    { "estatus": "pendiente", "monto": 2000, "premioFinal": false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
@@ -12,97 +30,252 @@
   "colaboradores": [
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 1",
+      "nombre": "Patricia Sosa Sanchez",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 2",
+      "nombre": "Cesar Alejandro Miranda Bravo",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 3",
+      "nombre": "Ramses Martinez Ortiz",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 4",
+      "nombre": "Mario Alberto Vilchis Nava",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 5",
+      "nombre": "Carlos Ignacio Juarez Hernandez",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 6",
+      "nombre": "Alexis Almaraz Robles",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 7",
+      "nombre": "Porfirio Martínez Martínez",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 8",
+      "nombre": "Gonzalo Abiut Arteaga Barajas",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 9",
+      "nombre": "Ricardo Peña Vargas",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 10",
+      "nombre": "Gerardo Pérez Soria",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 11",
+      "nombre": "Jose Alberto Villaseñor Suarez",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Colaborador Antiguo 12",
+      "nombre": "Alejandro Galicia García",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 1",
+      "nombre": "Manuel Antonio Ramirez Gomez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Brenda Cecilia Hernandez Perez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Eric Yael Gamboa Solis",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Alice Mayle Rojas Barrios",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Miguel Angel Castelán Mata",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Mariana Jimenez Jimenez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Luis Fernando Cruz Rivera",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Adrián Moisés Camacho Torrea",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Javier Pérez Pérez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Juan Carlos Vazquez Orozco",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Christian Oswaldo Lopez Leon",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Marco Antonio Lortia Prado",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Francisco Penedo Gonzalez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Andrea Aguirre Rendón",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Montserrat Mondragón Mancera",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Carlos Alberto Gomez Gonzalez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Veronica Leticia Gonzalez Castelán",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Andrew Estrada Torrea",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Monica Rocio Vallarta Soto",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Jose Luis Ramirez Rico",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Adrian Rojas Zarza",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Diego Armando Garcia Guillen",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Diego Estrada Torrea",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Hector Isaias Trujillo Galicia",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Jorge Manuel Martinez Perez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Ernesto de la Fraga Acosta",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Juan Miguel Angel Calderon Zarco",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Edgar Sanchez Garcia",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Juan Carlos Hernandez Cabrera",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Pavel Alejandro Tejeda Bracho",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 2",
+      "nombre": "Andrés juarez Hernandez",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 3",
+      "nombre": "Luis Enrique Herrera Rodriguez",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 4",
+      "nombre": "Adolfo de Ávila Galván",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 5",
+      "nombre": "Daniel Navarro Díaz",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 6",
+      "nombre": "Eliott Hans Novelo Montiel",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "colaborador Nuevo 7",
+      "nombre": "Edwin Martinez Palacios",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Jose Eduardo Segura Derramadero",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Mario Luis Bermeo Delgado",
       "colaboradorAntiguo": false
     }
   ]
