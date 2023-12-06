@@ -261,7 +261,7 @@ export default {
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
       console.log(this.colaboradoresRestantes.length)
-      let duracionAnimacion = parseInt(1500 / this.colaboradoresRestantes.length, 10);
+      let duracionAnimacion = parseInt(900 / this.colaboradoresRestantes.length, 10);
       console.log(duracionAnimacion)
       let colaboradoresFiltrados = [];
       let colaboradoresAnimacion = [...this.colaboradores];
