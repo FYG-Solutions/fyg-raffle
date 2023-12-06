@@ -68,7 +68,7 @@
             >
               <feather type="gift"></feather>
               <span class="ml-1">
-                ?
+                <!-- ? -->
               </span>
             </div>
           </div>
@@ -86,26 +86,24 @@
 
           <div class="width-full mt-3">
             <template v-for="(premio, index) in premiosParaSorteo">
-              <transition name="bounce" :key="index">
-                <div
-                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-                  :class="{
-                    'bg-green-200 text-green-700':
-                      premio.monto !== 0 && premio !== estaSorteando,
-                    'bg-red-200 text-red-700':
-                      premio.monto === 0 && premio !== estaSorteando,
-                    'bg-blue-200 text-blue-700': premio === estaSorteando
-                  }"
-                >
-                  <feather type="gift"></feather>
-                  <span class="ml-1" v-if="estaSorteando">
-                    ?
-                  </span>
-                  <span class="ml-1" v-else>
-                    {{ premio.monto | format_price }}
-                  </span>
-                </div>
-              </transition>
+                <transition name="bounce" :key="index">
+                  <div
+                    class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+                    :class="{
+                      'bg-green-200 text-green-700': premio.monto !== 0 && premio !== estaSorteando,
+                      'bg-red-200 text-red-700': premio.monto === 0 && premio !== estaSorteando,
+                      'bg-blue-200 text-blue-700': estaSorteando
+                    }"
+                  >
+                    <feather type="gift"></feather>
+                    <span class="ml-1" v-if="estaSorteando">
+                      <!-- ??? -->
+                    </span>
+                    <span class="ml-1" v-else>
+                      {{ premio.monto | format_price }}
+                    </span>
+                  </div>
+                </transition>
             </template>
           </div>
         </div>
@@ -139,7 +137,7 @@ export default {
       },
       listPremiosVisible: true,
       premiosParaSorteoVisible: false,
-      duracionSorteo: 10,
+      duracionSorteo: 700,
       duracionSiguienteColaborador: 10,
       estaSorteando: true
     };
@@ -260,11 +258,10 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      console.log(this.colaboradoresRestantes.length)
-      let duracionAnimacion = parseInt(900 / this.colaboradoresRestantes.length, 10);
+      let duracionAnimacion = parseInt(700 / this.colaboradoresRestantes.length, 10);
       console.log(duracionAnimacion)
       let colaboradoresFiltrados = [];
-      let colaboradoresAnimacion = [...this.colaboradores];
+      let colaboradoresAnimacion = [...this.colaboradoresRestantes];
       // Rellena con los colaboradores nuevos, si es que existen.
       // eslint-disable-next-line
       const colaboradoresNuevos = this.colaboradoresRestantes.filter(
@@ -286,12 +283,14 @@ export default {
       }
 
       // Animación para colaboradores
-      for (let i = this.colaboradores.length - 1; i >= 0; i--) {
+      for (let i = this.colaboradoresRestantes.length - 1; i >= 0; i--) {
         await new Promise(r => setTimeout(r, duracionAnimacion));
-        this.animacionSiguienteColaborador = colaboradoresAnimacion.splice(
-          Math.floor(Math.random() * colaboradoresAnimacion.length),
-          1
-        )[0];
+        if (colaboradoresAnimacion.length > 0) {
+          this.animacionSiguienteColaborador = colaboradoresAnimacion.splice(
+            Math.floor(Math.random() * colaboradoresAnimacion.length),
+            1
+          )[0];
+        }
       }
       // Elección del colaborador
       for (let i = colaboradoresFiltrados.length - 1; i >= 0; i--) {
@@ -311,8 +310,7 @@ export default {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
       this.premiosParaSorteo = [
         ...this.listaDePremiosPendientes.map(item => {
-          item.visible = true;
-          return item;
+          return {...item, visible: true}
         })
       ];
       // Oculta la lista de bonosPendientes, para mostrar la lista premiosParaSorteo
@@ -322,7 +320,6 @@ export default {
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
       while (this.premiosParaSorteo.length > 1) {
-        await new Promise(r => setTimeout(r, duracion));
         let item = this.premiosParaSorteo.filter(i => i.visible === true)[
           Math.floor(
             Math.random() *
@@ -347,8 +344,10 @@ export default {
         );
         // remove object
         this.premiosParaSorteo.splice(removeIndex, 1);
+        await new Promise(r => setTimeout(r, duracion));
+
       }
-      await new Promise(r => setTimeout(r, 1000));
+      await new Promise(r => setTimeout(r, 800));
 
       let resultadoSorteo = this.getResultadoSorteo();
       this.guardarResultado(resultadoSorteo);

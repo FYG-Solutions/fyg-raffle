@@ -1,8 +1,13 @@
 {
   "premios": [
+    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": "viaje", "premioFinal": true }
+    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
+    { "estatus": "pendiente", "monto": "Viaje", "premioFinal": true }
   ],
   "colaboradores": [
     {
@@ -18,6 +23,31 @@
     {
       "premio": "pendiente",
       "nombre": "Cesar Alejandro Miranda Bravo",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Daniel Navarro Díaz",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Eliott Hans Novelo Montiel",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Jorge Manuel Martinez Perez",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Juan Miguel Angel Calderon Zarco",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Edgar Sanchez Garcia",
       "colaboradorAntiguo": true
     }
   ]

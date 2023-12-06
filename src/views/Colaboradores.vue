@@ -16,7 +16,7 @@
               class="font-semibold"
               :class="
                 props.row.estatus === 'Pendiente'
-                  ? 'text-red-600'
+                  ? 'text-blue-500'
                   : 'text-green-600 '
               "
             >
@@ -24,7 +24,16 @@
             </span>
           </span>
           <span v-else-if="props.column.field === 'premio'">
-            {{ props.formattedRow[props.column.field] | format_price }}
+            <span
+              class="font-semibold"
+              :class="
+              props.row.premio !== 0
+                ? 'text-green-500'
+                : 'text-red-600 '
+            "
+            >
+              {{ props.formattedRow[props.column.field] | format_price }}
+            </span>
           </span>
           <span v-else>
             {{ props.formattedRow[props.column.field] }}

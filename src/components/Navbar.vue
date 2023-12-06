@@ -14,6 +14,16 @@
             <div class="flex">
               <div class="ml-10 flex items-baseline space-x-4">
                 <router-link
+                  :to="{ name: 'LoadData' }"
+                  class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700"
+                >
+                  Data
+                </router-link>
+              </div>
+            </div>
+            <div class="flex">
+              <div class="ml-10 flex items-baseline space-x-4">
+                <router-link
                   :to="{ name: 'Home' }"
                   class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700"
                 >
