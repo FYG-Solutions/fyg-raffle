@@ -1,28 +1,28 @@
 <template>
   <div
-    class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+    class="flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
   >
     <div class="max-w-md w-full">
       <div>
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Recarga de datos
+          Premios
         </h2>
       </div>
 
       <div>
         <button
           type="submit"
-          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+          class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
           @click="loadDataToFirestore"
         >
-          Cargar datos
+          Inicializar datos
         </button>
         <button
           type="submit"
-          class="group mt-3 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+          class="group mt-3 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           @click="eliminarDatos"
         >
-          Eliminar datos
+          Reiniciar datos
         </button>
       </div>
     </div>
@@ -30,11 +30,11 @@
 </template>
 
 <script>
-import jsonData from "../data/data.test.json";
+import jsonData from "../data/data.json";
 import firebase from "firebase";
 
 export default {
-  name: "Login",
+  name: "LoadData",
   data() {
     return {
       colaboradores: [],
@@ -50,7 +50,6 @@ export default {
       let colaboradoresRef = await firebase
         .firestore()
         .collection("colaboradores");
-
       premiosRef.onSnapshot(snap => {
         this.premios = [];
         snap.forEach(doc => {
@@ -78,8 +77,10 @@ export default {
         alert("Datos ya han sido cargados");
         return;
       }
-      let colaboradores = jsonData["colaboradores"];
-      let premios = jsonData["premios"];
+      let colaboradores = [...jsonData["colaboradores"]];
+      let premios = [...jsonData["premios"]];
+      console.log("colaboradores:", colaboradores.length);
+      console.log("premios:", premios.length);
 
       // Genera los premios de $ 0
       while (premios.length < colaboradores.length) {
@@ -102,15 +103,15 @@ export default {
       // Elimina los documentos iniciales
       this.limpiarDatos();
     },
-    eliminarDatos: function() {
-      this.colaboradores.forEach(item => {
+    eliminarDatos: async function() {
+      this.colaboradores.forEach(async item => {
         firebase
           .firestore()
           .collection("colaboradores")
           .doc(item.id)
           .delete();
       });
-      this.premios.forEach(item => {
+      this.premios.forEach(async item => {
         firebase
           .firestore()
           .collection("premios")

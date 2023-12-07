@@ -1,6 +1,9 @@
 <template>
   <main>
     <div class="width-full container mt-5 mb-10">
+      <div class="width-full">
+        <load-data />
+      </div>
       <vue-good-table
         :columns="columns"
         :rows="colaboradores"
@@ -27,10 +30,8 @@
             <span
               class="font-semibold"
               :class="
-              props.row.premio !== 0
-                ? 'text-green-500'
-                : 'text-red-600 '
-            "
+                props.row.premio !== 0 ? 'text-green-500' : 'text-red-600 '
+              "
             >
               {{ props.formattedRow[props.column.field] | format_price }}
             </span>
@@ -48,11 +49,13 @@
 import firebase from "firebase";
 import "vue-good-table/dist/vue-good-table.css";
 import { VueGoodTable } from "vue-good-table";
+import LoadData from "./LoadData.vue";
 
 export default {
   name: "Colaboradores",
   components: {
-    VueGoodTable
+    VueGoodTable,
+    LoadData
   },
   data() {
     return {

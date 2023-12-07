@@ -1,266 +1,595 @@
 {
   "premios": [
-    { "estatus": "pendiente", "monto": 2000, "premioFinal": false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": "Viaje", "premioFinal": true }
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": "Viaje a pueblo mágico",
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": "Viaje a la playa",
+      "premioFinal": true
+    }
   ],
   "colaboradores": [
     {
       "premio": "pendiente",
-      "nombre": "Patricia Sosa Sanchez",
+      "nombre": "PATRICIA SOSA SANCHEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Edgar Romero",
+      "nombre": "CESAR ALEJANDRO MIRANDA BRAVO",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Cesar Alejandro Miranda Bravo",
+      "nombre": "RAMSES MARTINEZ ORTIZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Ramses Martinez Ortiz",
+      "nombre": "MARIO ALBERTO VILCHIS NAVA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Mario Alberto Vilchis Nava",
+      "nombre": "CARLOS IGNACIO JUAREZ HERNANDEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Alexis Almaraz Robles",
+      "nombre": "RICARDO PEÑA VARGAS",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Porfirio Martínez Martínez",
+      "nombre": "GERARDO PEREZ SORIA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Gonzalo Abiut Arteaga Barajas",
+      "nombre": "JOSE ALBERTO VILLASEÑOR SUAREZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Ricardo Peña Vargas",
+      "nombre": "MANUEL ANTONIO RAMIREZ GOMEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Gerardo Pérez Soria",
+      "nombre": "BRENDA CECILIA HERNANDEZ PEREZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jose Alberto Villaseñor Suarez",
+      "nombre": "ERIC YAEL GAMBOA SOLIS",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Alejandro Galicia García",
+      "nombre": "MARIANA JIMENEZ JIMENEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Manuel Antonio Ramirez Gomez",
+      "nombre": "LUIS FERNANDO CRUZ RIVERA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Brenda Cecilia Hernandez Perez",
+      "nombre": "CHRISTIAN OSWALDO LOPEZ LEON",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Eric Yael Gamboa Solis",
+      "nombre": "MONTSERRAT MONDRAGON MANCERA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Alice Mayle Rojas Barrios",
+      "nombre": "CARLOS ALBERTO GOMEZ GONZALEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Miguel Angel Castelán Mata",
+      "nombre": "MONICA ROCIO VALLARTA SOTO",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Mariana Jimenez Jimenez",
+      "nombre": "DIEGO ARMANDO GARCIA GUILLEN",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Luis Fernando Cruz Rivera",
+      "nombre": "EDGAR SANCHEZ GARCIA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Adrián Moisés Camacho Torrea",
+      "nombre": "JUAN CARLOS HERNANDEZ CABRERA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Juan Carlos Vazquez Orozco",
+      "nombre": "GERARDINE PAMELA CABALLERO GUTIERREZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Christian Oswaldo Lopez Leon",
+      "nombre": "ANGEL ALBERTO PADILLA HUERTA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Marco Antonio Lortia Prado",
+      "nombre": "GUILLERMINA CRUZ MONTIEL",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Francisco Penedo Gonzalez",
+      "nombre": "JORGE RODRIGO MARCOS MARTINEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Andrea Aguirre Rendón",
+      "nombre": "LUIS ANTONIO RAMIREZ FONSECA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Montserrat Mondragón Mancera",
+      "nombre": "GONZALO ABIUT ARTEAGA BARAJAS",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Carlos Alberto Gomez Gonzalez",
+      "nombre": "YOLITZIN JIMENEZ JIMENEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Veronica Leticia Gonzalez Castelán",
+      "nombre": "NOEL ESQUIVEL  MENDEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Andrew Estrada Torrea",
+      "nombre": "JESSICA STEPHANIA SAINZ LEON",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Monica Rocio Vallarta Soto",
+      "nombre": "CARLOS ARTURO SANDOVAL TORRES",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jose Luis Ramirez Rico",
+      "nombre": "ALAN MARIN ZARATE",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Adrian Rojas Zarza",
+      "nombre": "JOSUE MOISES ROJAS VERTIZ GUEVARA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Diego Armando Garcia Guillen",
+      "nombre": "JESUS UZIEL FLORES DE LA CRUZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Diego Estrada Torrea",
+      "nombre": "ARTURO LOPEZ LOPEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Hector Isaias Trujillo Galicia",
+      "nombre": "ERIK EMMANUEL SOSA ALCAUTER",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Jorge Manuel Martinez Perez",
+      "nombre": "SAUL HERNANDEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Juan Miguel Angel Calderon Zarco",
+      "nombre": "EDUARDO ANTONIO ROSAS MEDINA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Edgar Sanchez Garcia",
+      "nombre": "RAUL PEREZ DURAN",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Juan Carlos Hernandez Cabrera",
+      "nombre": "COLIN GUZMAN BRENDA LETICIA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "Pavel Alejandro Tejeda Bracho",
+      "nombre": "MARTINEZ ROBLES DANIEL IVAN",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "ARREOLA RENDON MARIO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "HERNANDEZ BRAVO JOKABED",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "LATORRE VILLEDA FERNANDO EDGAR",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "HERNANDEZ POLVO ADDIEL SILBANO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "MANRIQUE AGUILA REGINA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "MARLENE LARA HERNANDEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "SALMA CRUZ SANCHEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MONTALBAN ROJAS",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MISAEL SOLANO CONTRERAS",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "LUIS RENTERIA CEDILLO",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Andrés juarez Hernandez",
+      "nombre": "KARLA LETICIA GARCIA ROMAN",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Adolfo de Ávila Galván",
+      "nombre": "LUIS ANGEL LATORRE VILLEDA",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Daniel Navarro Díaz",
+      "nombre": "FERNANDO ISLAS GERARDO",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Eliott Hans Novelo Montiel",
+      "nombre": "SENEN RAMIREZ RUIZ",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Edwin Martinez Palacios",
+      "nombre": "ALBERTO MIRANDA PACHECO",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Jose Eduardo Segura Derramadero",
+      "nombre": "JUAN FERNANDO HERNANDEZ REYES",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Mario Luis Bermeo Delgado",
+      "nombre": "MIRYAM SANCHEZ BARRAGAN",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "URIEL LOZANO TREJO",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "CESAR ANDRES HERNANDEZ PEREZ",
       "colaboradorAntiguo": false
     }
   ]

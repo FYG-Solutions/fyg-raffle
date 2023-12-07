@@ -1,30 +1,12 @@
 {
   "premios": [
-    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
     { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": "Viaje", "premioFinal": true }
+    { "estatus": "pendiente", "monto": "Viaje a Pueblo Mágico", "premioFinal": false },
+    { "estatus": "pendiente", "monto": "Viaje a la Playa", "premioFinal": true }  
   ],
   "colaboradores": [
-    {
-      "premio": "pendiente",
-      "nombre": "Patricia Sosa Sanchez",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Edgar Romero",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Cesar Alejandro Miranda Bravo",
-      "colaboradorAntiguo": true
-    },
     {
       "premio": "pendiente",
       "nombre": "Daniel Navarro Díaz",

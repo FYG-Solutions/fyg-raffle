@@ -50,7 +50,6 @@
           >
             Sortear premio para {{ colaboradorActivo.nombre }}
           </button>
-
         </div>
 
         <!-- Lista de premios pendientes -->
@@ -87,24 +86,26 @@
 
           <div class="width-full mt-3">
             <template v-for="(premio, index) in premiosParaSorteo">
-                <transition name="bounce" :key="index">
-                  <div
-                    class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-                    :class="{
-                      'bg-green-200 text-green-700': premio.monto !== 0 && premio !== estaSorteando,
-                      'bg-red-200 text-red-700': premio.monto === 0 && premio !== estaSorteando,
-                      'bg-blue-200 text-blue-700': estaSorteando
-                    }"
-                  >
-                    <feather type="gift"></feather>
-                    <span class="ml-1" v-if="estaSorteando">
-                      <!-- ??? -->
-                    </span>
-                    <span class="ml-1" v-else>
-                      {{ premio.monto | format_price }}
-                    </span>
-                  </div>
-                </transition>
+              <transition name="bounce" :key="index">
+                <div
+                  class="mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
+                  :class="{
+                    'bg-green-200 text-green-700':
+                      premio.monto !== 0 && premio !== estaSorteando,
+                    'bg-red-200 text-red-700':
+                      premio.monto === 0 && premio !== estaSorteando,
+                    'bg-blue-200 text-blue-700': estaSorteando
+                  }"
+                >
+                  <feather type="gift"></feather>
+                  <span class="ml-1" v-if="estaSorteando">
+                    <!-- ??? -->
+                  </span>
+                  <span class="ml-1" v-else>
+                    {{ premio.monto | format_price }}
+                  </span>
+                </div>
+              </transition>
             </template>
           </div>
         </div>
@@ -274,8 +275,10 @@ export default {
      */
     async obtenerSiguienteParticipanteClick() {
       this.colaboradorActivo = null;
-      let duracionAnimacion = parseInt(700 / this.colaboradoresRestantes.length, 10);
-      console.log(duracionAnimacion)
+      let duracionAnimacion = parseInt(
+        700 / this.colaboradoresRestantes.length,
+        10
+      );
       let colaboradoresFiltrados = [];
       let colaboradoresAnimacion = [...this.colaboradoresRestantes];
       // Rellena con los colaboradores nuevos, si es que existen.
@@ -318,6 +321,9 @@ export default {
       this.colaboradorActivo = this.siguienteColaborador;
       this.siguienteColaborador = { nombre: "" };
       this.btnSiguienteParticipanteDisabled = true;
+      if (this.colaboradoresRestantes.length === 1) {
+        this.sortearPremio();
+      }
     },
     /**
      * Función que inicia la interacción para el sorteo de bono para el siguiente colaborador.
@@ -326,7 +332,7 @@ export default {
       // Precarga la lista de bonos para el sorteo con los bonos pendientes
       this.premiosParaSorteo = [
         ...this.listaDePremiosPendientes.map(item => {
-          return {...item, visible: true}
+          return { ...item, visible: true };
         })
       ];
       // Oculta la lista de bonosPendientes, para mostrar la lista premiosParaSorteo
@@ -361,7 +367,6 @@ export default {
         // remove object
         this.premiosParaSorteo.splice(removeIndex, 1);
         await new Promise(r => setTimeout(r, duracion));
-
       }
       await new Promise(r => setTimeout(r, 800));
 

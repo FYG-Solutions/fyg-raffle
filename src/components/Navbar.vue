@@ -11,7 +11,7 @@
                 alt="Workflow"
               />
             </div>
-            <div class="flex">
+            <!-- <div class="flex">
               <div class="ml-10 flex items-baseline space-x-4">
                 <router-link
                   :to="{ name: 'LoadData' }"
@@ -20,7 +20,7 @@
                   Data
                 </router-link>
               </div>
-            </div>
+            </div> -->
             <div class="flex">
               <div class="ml-10 flex items-baseline space-x-4">
                 <router-link
@@ -48,7 +48,7 @@
                   class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 cursor-pointer"
                 >
                   Logout
-              </a>
+                </a>
               </div>
             </div>
           </div>
@@ -84,10 +84,11 @@ export default {
   methods: {
     logout() {
       firebase
-      .auth()
-      .signOut().then(() => {
-        this.$router.replace("login");
-      });
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace("login");
+        });
     }
   }
 };
