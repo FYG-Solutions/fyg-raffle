@@ -270,6 +270,7 @@ export default {
       }
 
       // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
+      console.log([...premiosGanadores] )
       return premiosPendientes;
     }
   },
@@ -408,12 +409,14 @@ export default {
         const removeIndex = this.premiosParaSorteo.findIndex(
           j => j.id === item.id
         );
+        console.log([...this.listaDePremiosPendientes]);
         // remove object
         this.premiosParaSorteo.splice(removeIndex, 1);
         await new Promise(r => setTimeout(r, duracion));
       }
       await new Promise(r => setTimeout(r, 800));
-
+      console.log([...this.listaDePremiosPendientes]); 
+      
       let resultadoSorteo = this.getResultadoSorteo();
       this.guardarResultado(resultadoSorteo);
       this.btnSortearActivoDisabled = true;
@@ -445,6 +448,7 @@ export default {
      * Permite obtener el resultado del sorteo.
      */
     formatCurrency(value) {
+      console.log(value)
       if (isNaN(value)) {
         return value;
       }
@@ -455,7 +459,9 @@ export default {
     getResultadoSorteo() {
       this.estaSorteando = false;
       let resultado = this.premiosParaSorteo[0];
+      console.log(resultado)
       let formatValue = this.formatCurrency(resultado.monto);
+      console.log(resultado);
       if (resultado.monto !== 0) {
         this.$swal({
           title: "¡Felicidades!",
