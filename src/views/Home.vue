@@ -13,17 +13,13 @@
     </div>
     <!-- /HEADER Details -->
 
-    <div
-      class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-auto my-10 mx-5"
-    >
+    <div class="grid grid-cols-3 gap-5 border-4 border-dashed border-gray-200 rounded-lg h-auto my-10 mx-5">
       <div class="col-span-1 mt-5 h-72">
         <div class="width-full">
-          <button
-            :disabled="btnSiguienteParticipanteDisabled"
+          <button :disabled="btnSiguienteParticipanteDisabled"
             class="rounded border border-blue-500 bg-blue-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline"
             :class="{ 'cursor-not-allowed': btnSiguienteParticipanteDisabled }"
-            @click="obtenerSiguienteParticipanteClick"
-          >
+            @click="obtenerSiguienteParticipanteClick">
             Elegir siguiente participante
           </button>
         </div>
@@ -41,31 +37,21 @@
       </div>
       <div class="col-span-2 mt-5">
         <div class="width-full">
-          <button
-            v-if="colaboradorActivo"
-            :disabled="btnSortearActivoDisabled"
+          <button v-if="colaboradorActivo" :disabled="btnSortearActivoDisabled"
             class="rounded border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline"
-            :class="{ 'cursor-not-allowed': btnSortearActivoDisabled }"
-            @click="sortearPremio"
-          >
+            :class="{ 'cursor-not-allowed': btnSortearActivoDisabled }" @click="sortearPremio">
             Sortear premio para {{ colaboradorActivo.nombre }}
           </button>
         </div>
 
         <!-- Lista de premios pendientes -->
-        <div
-          v-if="listPremiosVisible"
-          class="premios-pendientes-container w-full"
-        >
+        <div v-if="listPremiosVisible" class="premios-pendientes-container w-full">
           <p class="mt-5">
             Premios pendientes:
           </p>
           <div class="width-full mt-3">
-            <div
-              v-for="(premio, index) in listaDePremiosPendientes"
-              :key="index"
-              class="bg-blue-200 text-blue-700 mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full"
-            >
+            <div v-for="(premio, index) in listaDePremiosPendientes" :key="index"
+              class="bg-blue-200 text-blue-700 mr-5 mt-4 px-10 text-xs inline-flex items-center font-bold leading-sm uppercase px-3 py-1 rounded-full">
               <feather type="gift"></feather>
               <span class="ml-1">
                 <!-- ? -->
@@ -76,10 +62,7 @@
         <!-- /Lista de premios pendientes -->
 
         <!-- Lista de premios para sortear -->
-        <div
-          v-if="premiosParaSorteoVisible"
-          class="premios-pendientes-container w-full"
-        >
+        <div v-if="premiosParaSorteoVisible" class="premios-pendientes-container w-full">
           <p v-if="estaSorteando" class="mt-5 text-xl">
             Sorteando premios...
           </p>
@@ -95,8 +78,7 @@
                     'bg-red-200 text-red-700':
                       premio.monto === 0 && premio !== estaSorteando,
                     'bg-blue-200 text-blue-700': estaSorteando
-                  }"
-                >
+                  }">
                   <feather type="gift"></feather>
                   <span class="ml-1" v-if="estaSorteando">
                     <!-- ??? -->
@@ -113,11 +95,8 @@
       </div>
       <div class="flex justify-end col-span-3">
         <div class="mx-10 my-5 flex items-baseline space-x-4">
-          <a
-            href="#"
-            class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 flex items-center"
-            @click="reload"
-          >
+          <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-800 hover:text-gray-700 flex items-center"
+            @click="reload">
             <span class="font-semibold">Siguiente premio</span>
             <feather type="play"></feather>
           </a>
@@ -226,7 +205,6 @@ export default {
       }
       // Ordena los premios ganadores
       premiosPendientes = premiosGanadores.filter(item => item.monto !== 0);
-      // .sort((a, b) => b.monto - a.monto);
 
       // Agrega los premios ganadores al arreglo de premios perdedores
       while (premiosPerdedores.length > 0) {
@@ -237,6 +215,63 @@ export default {
         let rand = Math.random() * (max - min) + min;
         premiosPendientes.splice(rand + 1, 0, premioPerdedor);
       }
+
+      // Si aun no es mitad de sorte, envia los premios principales al inicio
+
+      const totalColaboradores = [...this.colaboradores].length;
+      const colaboradoresRestantes = [...this.colaboradoresRestantes].length;
+      const esMitadSorteo = colaboradoresRestantes < (totalColaboradores / 2);
+      if (!esMitadSorteo) {
+        console.log("Seguimos en primera parte del sorteo")
+        premiosPendientes.sort((a, b) => {
+          // Comprobando si el atributo es de tipo texto en 'a'
+          let aMonto = typeof a.monto === 'string';
+
+          // Comprobando si el atributo es de tipo texto en 'b'
+          let bMonto = typeof b.monto === 'string';
+
+          // Si ambos son textos o ninguno lo es, no cambian de posición
+          if (aMonto === bMonto) {
+            return 0;
+          }
+
+          // Si 'a' es texto pero 'b' no, 'a' va primero
+          if (aMonto) {
+            return -1;
+          }
+
+          // En cualquier otro caso, 'b' va primero
+          return 1;
+        });
+        console.log(premiosPendientes);
+      }
+      if (this.colaboradorActivo) {
+        // Si no es colaborador antiguo, acomoda los premios desendentemente
+        if (!this.colaboradorActivo.colaboradorAntiguo) {
+          console.log("Ordenando premios para colaborador antiguo");
+          premiosPendientes.sort((a, b) => {
+            // Comprobando si el monto de 'a' es 0
+            let aEsCero = a.monto === 0;
+
+            // Comprobando si el monto de 'b' es 0
+            let bEsCero = b.monto === 0;
+
+            // Si ambos tienen monto 0 o ninguno lo tiene, no cambian de posición
+            if (aEsCero === bEsCero) {
+              return 0;
+            }
+
+            // Si 'a' es 0 pero 'b' no, 'a' va después
+            if (aEsCero) {
+              return 1;
+            }
+
+            // En cualquier otro caso, 'b' va después
+            return -1;
+          });
+        }
+      }
+      console.log([...premiosPendientes]);
 
       // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
       return premiosPendientes;
@@ -284,22 +319,26 @@ export default {
       // Rellena con los colaboradores nuevos, si es que existen.
       // eslint-disable-next-line
       const colaboradoresNuevos = this.colaboradoresRestantes.filter(
-        i => i["colaboradorAntiguo"] === false
+        i => !i["colaboradorAntiguo"]
       );
-      if (colaboradoresNuevos.length > 0) {
-        if (colaboradoresNuevos.length < 3) {
-          colaboradoresFiltrados = [...colaboradoresNuevos];
-        } else {
-          colaboradoresFiltrados = [
-            ...colaboradoresNuevos,
-            this.colaboradoresRestantes[0],
-            this.colaboradoresRestantes[1],
-            this.colaboradoresRestantes[2]
-          ];
+      const colaboradoresAntiguos = this.colaboradoresRestantes.filter(
+        i => i["colaboradorAntiguo"]
+      );
+      const existenColaboradoresNuevos = colaboradoresNuevos.length > 0;
+
+      // Determinar cuántos colaboradores antiguos se deben dejar para las últimas 5 llamadas
+
+      // Filtrar colaboradores antiguos si aún no estamos en las últimas 5 llamadas
+      if (existenColaboradoresNuevos) {
+        // Forzamos sólo colaboradores nuevos si hay más de 5% de nuevos
+        if(colaboradoresNuevos.length * 100 / colaboradoresAntiguos.length > 5) {
+          console.log("Depurando...");
+          colaboradoresAntiguos.length = 0;
         }
-      } else {
-        colaboradoresFiltrados = [...this.colaboradoresRestantes];
       }
+
+      // Combinar los colaboradores restantes
+      colaboradoresFiltrados = colaboradoresAntiguos.concat(colaboradoresNuevos);
 
       // Animación para colaboradores
       for (let i = this.colaboradoresRestantes.length - 1; i >= 0; i--) {
@@ -311,6 +350,7 @@ export default {
           )[0];
         }
       }
+      console.log("Filtrados...", colaboradoresFiltrados)
       // Elección del colaborador
       for (let i = colaboradoresFiltrados.length - 1; i >= 0; i--) {
         this.siguienteColaborador = colaboradoresFiltrados.splice(
@@ -337,17 +377,24 @@ export default {
       ];
       // Oculta la lista de bonosPendientes, para mostrar la lista premiosParaSorteo
       this.listPremiosVisible = false;
-
+      console.log("premios para sorte length", [...this.premiosParaSorteo].length);
+      console.log("colaboradores", [...this.colaboradores].length)
       // Muestra la lista premiosParaSorteo
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
       while (this.premiosParaSorteo.length > 1) {
-        let item = this.premiosParaSorteo.filter(i => i.visible === true)[
+        let item;
+        if (this.colaboradorActivo.colaboradorAntiguo) {
+          item = this.premiosParaSorteo.filter(i => i.visible === true)[
           Math.floor(
             Math.random() *
               this.premiosParaSorteo.filter(i => i.visible === true).length
           )
         ];
+        } else {
+          item = this.premiosParaSorteo.filter(i => i.visible === true)[0];
+        }
+
 
         // Si quedan dos regalos, y aun existe el regalo final, lo elimina directamente
         if (this.premiosParaSorteo.length === 2) {
@@ -389,13 +436,13 @@ export default {
         .collection("premios")
         .doc(resultadoSorteo.id)
         .set(premio)
-        .then(() => {});
+        .then(() => { });
       firebase
         .firestore()
         .collection("colaboradores")
         .doc(this.colaboradorActivo.id)
         .set(colaborador)
-        .then(() => {});
+        .then(() => { });
     },
     /**
      * Permite obtener el resultado del sorteo.

@@ -287,6 +287,11 @@
     },
     {
       "estatus": "pendiente",
+      "monto": "Pantalla",
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
       "monto": "Viaje a pueblo mágico",
       "premioFinal": false
     },
@@ -590,6 +595,11 @@
     {
       "premio": "pendiente",
       "nombre": "CESAR ANDRES HERNANDEZ PEREZ",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "MARIANA TELLEZ RESÉNDIZ",
       "colaboradorAntiguo": false
     }
   ]

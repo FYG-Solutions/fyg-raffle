@@ -13,7 +13,7 @@
         <button
           type="submit"
           class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-          @click="loadDataToFirestore"
+          @click="saveDataToFirestore"
         >
           Inicializar datos
         </button>
@@ -22,7 +22,7 @@
           class="group mt-3 relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
           @click="eliminarDatos"
         >
-          Reiniciar datos
+          Borrar datos
         </button>
       </div>
     </div>
@@ -71,7 +71,7 @@ export default {
     /**
      * Permite precargar la BDD con los valores iniciales.
      */
-    loadDataToFirestore() {
+    saveDataToFirestore() {
       // Valida si existen valores en la BDD
       if (this.colaboradores.length > 1) {
         alert("Datos ya han sido cargados");
@@ -81,6 +81,7 @@ export default {
       let premios = [...jsonData["premios"]];
       console.log("colaboradores:", colaboradores.length);
       console.log("premios:", premios.length);
+      console.log(premios.filter(i => i.monto != 0));
 
       // Genera los premios de $ 0
       while (premios.length < colaboradores.length) {

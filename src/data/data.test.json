@@ -1,36 +1,157 @@
 {
   "premios": [
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 0, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": 2000, "premioFinal":  false },
-    { "estatus": "pendiente", "monto": "Viaje a Pueblo Mágico", "premioFinal": false },
-    { "estatus": "pendiente", "monto": "Viaje a la Playa", "premioFinal": true }  
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 0,
+      "premioFinal": false
+    },
+
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": 2000,
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": "Pantalla",
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": "Viaje a pueblo mágico",
+      "premioFinal": false
+    },
+    {
+      "estatus": "pendiente",
+      "monto": "Viaje a la playa",
+      "premioFinal": true
+    }
   ],
   "colaboradores": [
     {
       "premio": "pendiente",
-      "nombre": "Daniel Navarro Díaz",
+      "nombre": "PATRICIA SOSA SANCHEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "CESAR ALEJANDRO MIRANDA BRAVO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "LATORRE VILLEDA FERNANDO EDGAR",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "HERNANDEZ POLVO ADDIEL SILBANO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "MANRIQUE AGUILA REGINA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "MARLENE LARA HERNANDEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "SALMA CRUZ SANCHEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MONTALBAN ROJAS",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MISAEL SOLANO CONTRERAS",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "LUIS RENTERIA CEDILLO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "KARLA LETICIA GARCIA ROMAN",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "LUIS ANGEL LATORRE VILLEDA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "URIEL LOZANO TREJO",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Eliott Hans Novelo Montiel",
+      "nombre": "CESAR ANDRES HERNANDEZ PEREZ",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "Jorge Manuel Martinez Perez",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Juan Miguel Angel Calderon Zarco",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "Edgar Sanchez Garcia",
-      "colaboradorAntiguo": true
+      "nombre": "MARIANA TELLEZ RESÉNDIZ",
+      "colaboradorAntiguo": false
     }
   ]
 }

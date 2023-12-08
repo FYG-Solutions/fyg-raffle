@@ -1,13 +1,13 @@
 <template>
   <main>
-    <div class="width-full container mt-5 mb-10">
+    <div class="container mt-5 mb-10">
       <div class="width-full">
         <load-data />
       </div>
       <vue-good-table
         :columns="columns"
         :rows="colaboradores"
-        max-height="720px"
+        max-height="55vh"
         :line-numbers="true"
         :search-options="{
           enabled: true
