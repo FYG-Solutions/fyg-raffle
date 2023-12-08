@@ -172,26 +172,6 @@
     },
     {
       "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
       "monto": 2000,
       "premioFinal": false
     },
@@ -309,12 +289,12 @@
   "colaboradores": [
     {
       "premio": "pendiente",
-      "nombre": "PATRICIA SOSA SANCHEZ",
+      "nombre": "CARLOS IGNACIO JUAREZ HERNANDEZ",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "DIEGO ESTRADA",
+      "nombre": "PATRICIA SOSA SANCHEZ",
       "colaboradorAntiguo": true
     },
     {
@@ -334,12 +314,7 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "CARLOS IGNACIO JUAREZ HERNANDEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "RICARDO PEÑA VARGAS",
+      "nombre": "JOSE ALBERTO VILLASEÑOR SUAREZ",
       "colaboradorAntiguo": true
     },
     {
@@ -349,12 +324,22 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "JOSE ALBERTO VILLASEÑOR SUAREZ",
+      "nombre": "MANRIQUE AGUILA REGINA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "RICARDO PEÑA VARGAS",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
       "nombre": "MANUEL ANTONIO RAMIREZ GOMEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MISAEL SOLANO CONTRERAS",
       "colaboradorAntiguo": true
     },
     {
@@ -369,7 +354,7 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "MARIANA JIMENEZ JIMENEZ",
+      "nombre": "JOSUE MONTALBAN ROJAS",
       "colaboradorAntiguo": true
     },
     {
@@ -389,142 +374,17 @@
     },
     {
       "premio": "pendiente",
+      "nombre": "MARLENE LARA HERNANDEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "Diego Estrada Torrea",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
       "nombre": "CARLOS ALBERTO GOMEZ GONZALEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "MONICA ROCIO VALLARTA SOTO",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "DIEGO ARMANDO GARCIA GUILLEN",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "EDGAR SANCHEZ GARCIA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JUAN CARLOS HERNANDEZ CABRERA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "GERARDINE PAMELA CABALLERO GUTIERREZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "ANGEL ALBERTO PADILLA HUERTA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "GUILLERMINA CRUZ MONTIEL",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JORGE RODRIGO MARCOS MARTINEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "LUIS ANTONIO RAMIREZ FONSECA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "GONZALO ABIUT ARTEAGA BARAJAS",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "YOLITZIN JIMENEZ JIMENEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "NOEL ESQUIVEL  MENDEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JESSICA STEPHANIA SAINZ LEON",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "CARLOS ARTURO SANDOVAL TORRES",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "ALAN MARIN ZARATE",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JOSUE MOISES ROJAS VERTIZ GUEVARA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JESUS UZIEL FLORES DE LA CRUZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "ARTURO LOPEZ LOPEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "ERIK EMMANUEL SOSA ALCAUTER",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "SAUL HERNANDEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "EDUARDO ANTONIO ROSAS MEDINA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "RAUL PEREZ DURAN",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "COLIN GUZMAN BRENDA LETICIA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "MARTINEZ ROBLES DANIEL IVAN",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "ARREOLA RENDON MARIO",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "HERNANDEZ BRAVO JOKABED",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "LATORRE VILLEDA FERNANDO EDGAR",
       "colaboradorAntiguo": true
     },
     {
@@ -534,37 +394,83 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "MANRIQUE AGUILA REGINA",
+      "nombre": "MONICA ROCIO VALLARTA SOTO",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "MARLENE LARA HERNANDEZ",
+      "nombre": "LATORRE VILLEDA FERNANDO EDGAR",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "SALMA CRUZ SANCHEZ",
+      "nombre": "EDGAR SANCHEZ GARCIA",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "JOSUE MONTALBAN ROJAS",
+      "nombre": "HERNANDEZ BRAVO JOKABED",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "JOSUE MISAEL SOLANO CONTRERAS",
+      "nombre": "DIEGO ARMANDO GARCIA GUILLEN",
       "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "LUIS RENTERIA CEDILLO",
-      "colaboradorAntiguo": false
+      "nombre": "JUAN CARLOS HERNANDEZ CABRERA",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
-      "nombre": "KARLA LETICIA GARCIA ROMAN",
+      "nombre": "MARTINEZ ROBLES DANIEL IVAN",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "GERARDINE PAMELA CABALLERO GUTIERREZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "COLIN GUZMAN BRENDA LETICIA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "ANGEL ALBERTO PADILLA HUERTA",
+      "colaboradorAntiguo": true
+    },
+
+    {
+      "premio": "pendiente",
+      "nombre": "RAUL PEREZ DURAN",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JORGE RODRIGO MARCOS MARTINEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "EDUARDO ANTONIO ROSAS MEDINA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "GUILLERMINA CRUZ MONTIEL",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "SAUL HERNANDEZ PRADO",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "FERNANDO ISLAS GERARDO",
       "colaboradorAntiguo": false
     },
     {
@@ -574,22 +480,72 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "FERNANDO ISLAS GERARDO",
+      "nombre": "KARLA LETICIA GARCIA ROMAN",
       "colaboradorAntiguo": false
     },
     {
       "premio": "pendiente",
-      "nombre": "SENEN RAMIREZ RUIZ",
+      "nombre": "LUIS RENTERIA CEDILLO",
       "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "ERIK EMMANUEL SOSA ALCAUTER",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "GONZALO ABIUT ARTEAGA BARAJAS",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "ARTURO LOPEZ LOPEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "YOLITZIN JIMENEZ JIMENEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JESUS UZIEL FLORES DE LA CRUZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JOSUE MOISES ROJAS VERTIZ GUEVARA",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JESSICA STEPHANIA SAINZ LEON",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "ALAN MARIN ZARATE",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "CARLOS ARTURO SANDOVAL TORRES",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "SALMA CRUZ SANCHEZ",
+      "colaboradorAntiguo": true
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "EDGAR ROMERO",
+      "colaboradorAntiguo": true
     },
     {
       "premio": "pendiente",
       "nombre": "ALBERTO MIRANDA PACHECO",
-      "colaboradorAntiguo": false
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "JUAN FERNANDO HERNANDEZ REYES",
       "colaboradorAntiguo": false
     },
     {
@@ -609,7 +565,12 @@
     },
     {
       "premio": "pendiente",
-      "nombre": "MARIANA TELLEZ RESÉNDIZ",
+      "nombre": "Mariana Tellez Resendiz",
+      "colaboradorAntiguo": false
+    },
+    {
+      "premio": "pendiente",
+      "nombre": "JUAN FERNANDO HERNANDEZ REYES",
       "colaboradorAntiguo": false
     }
   ]

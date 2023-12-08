@@ -15,41 +15,6 @@
       "monto": 0,
       "premioFinal": false
     },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
-    {
-      "estatus": "pendiente",
-      "monto": 0,
-      "premioFinal": false
-    },
 
     {
       "estatus": "pendiente",
@@ -78,41 +43,6 @@
     }
   ],
   "colaboradores": [
-    {
-      "premio": "pendiente",
-      "nombre": "PATRICIA SOSA SANCHEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "CESAR ALEJANDRO MIRANDA BRAVO",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "LATORRE VILLEDA FERNANDO EDGAR",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "HERNANDEZ POLVO ADDIEL SILBANO",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "MANRIQUE AGUILA REGINA",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "MARLENE LARA HERNANDEZ",
-      "colaboradorAntiguo": true
-    },
-    {
-      "premio": "pendiente",
-      "nombre": "SALMA CRUZ SANCHEZ",
-      "colaboradorAntiguo": true
-    },
     {
       "premio": "pendiente",
       "nombre": "JOSUE MONTALBAN ROJAS",
