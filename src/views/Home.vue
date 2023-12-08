@@ -222,7 +222,6 @@ export default {
       const colaboradoresRestantes = [...this.colaboradoresRestantes].length;
       const esMitadSorteo = colaboradoresRestantes < (totalColaboradores / 2);
       if (!esMitadSorteo) {
-        console.log("Seguimos en primera parte del sorteo")
         premiosPendientes.sort((a, b) => {
           // Comprobando si el atributo es de tipo texto en 'a'
           let aMonto = typeof a.monto === 'string';
@@ -243,12 +242,10 @@ export default {
           // En cualquier otro caso, 'b' va primero
           return 1;
         });
-        console.log(premiosPendientes);
       }
       if (this.colaboradorActivo) {
         // Si no es colaborador antiguo, acomoda los premios desendentemente
         if (!this.colaboradorActivo.colaboradorAntiguo) {
-          console.log("Ordenando premios para colaborador antiguo");
           premiosPendientes.sort((a, b) => {
             // Comprobando si el monto de 'a' es 0
             let aEsCero = a.monto === 0;
@@ -271,7 +268,6 @@ export default {
           });
         }
       }
-      console.log([...premiosPendientes]);
 
       // Ejecuta bloqueo de seguridad en caso de que sólo quede 1 premio
       return premiosPendientes;
@@ -331,7 +327,7 @@ export default {
       // Filtrar colaboradores antiguos si aún no estamos en las últimas 5 llamadas
       if (existenColaboradoresNuevos) {
         // Forzamos sólo colaboradores nuevos si hay más de 5% de nuevos
-        if(colaboradoresNuevos.length * 100 / colaboradoresAntiguos.length > 5) {
+        if(colaboradoresNuevos.length * 100 / colaboradoresAntiguos.length > 20) {
           console.log("Depurando...");
           colaboradoresAntiguos.length = 0;
         }
@@ -377,8 +373,9 @@ export default {
       ];
       // Oculta la lista de bonosPendientes, para mostrar la lista premiosParaSorteo
       this.listPremiosVisible = false;
-      console.log("premios para sorte length", [...this.premiosParaSorteo].length);
-      console.log("colaboradores", [...this.colaboradores].length)
+      console.log("PP", [...this.listaDePremiosPendientes].length);
+      console.log("PPP", [...this.listaDePremiosPendientes.filter(i=>i.monto===0)].length);
+      console.log("C", [...this.colaboradores].length)
       // Muestra la lista premiosParaSorteo
       this.premiosParaSorteoVisible = true;
       let duracion = this.duracionSorteo / this.listaDePremiosPendientes.length;
